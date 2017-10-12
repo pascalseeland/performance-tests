@@ -10,7 +10,7 @@
 WORK_DIR=$(pwd) # do not change this, unless necessary
 
 TESTPLAN="testcases/suite.jmx" # TODO: interpret bash parameters $(echo $1; shift)
-JMETER_CMD=${WORK_DIR}/apache-jmeter-2.13/bin/jmeter.sh # jMeter Command -- default: jmeter, if in PATH env variable
+JMETER_CMD=/usr/share/jmeter/apache-jmeter-3.3/bin/jmeter.sh # jMeter Command -- default: jmeter, if in PATH env variable
 OUT_DIR="${WORK_DIR}/out"
 LOG="${OUT_DIR}/jmeter.log" # may want to add a timestamp YYYY-MM-DD...
 
@@ -25,22 +25,22 @@ PROPFILE="${WORK_DIR}/config/jmeter/xml-results.properties"
 # via `--jmeterproperty KEY=VALUE`
 JMETER_PROPERTIES=(
   "PROTOCOL=http" # http, https, file
-  "HOST=localhost" # domain or ip, e.g. www.ilias.de, localhost, 127.0.0.1
-  "PATH=/ilias/trunk/" # must not be empty - e.g. /, /path/to/ilias, /docu, /test51, ..
+  "HOST=localhost-php7" # domain or ip, e.g. www.ilias.de, localhost, 127.0.0.1
+  "PATH=/1_dev/trunk/www/" # must not be empty - e.g. /, /path/to/ilias, /docu, /test51, ..
   "PORT=80" # e.g. 80, 443
-  "CLIENT_ID=ilias" # e.g. ilias
+  "CLIENT_ID=default" # e.g. ilias
   "IS_ADMIN=false" # default: false
   "READ_ONLY=true" # default: true
 
   # Default: Static Credentials
-  "USERNAME=" # ILIAS-User
-  "PASSWORD=" # ILIAS-Password
+  "USERNAME=root" # ILIAS-User
+  "PASSWORD=homer" # ILIAS-Password
 
   # Alternative: Credentials from CSV
   # "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
 
   "THREADS=1" # default: 1
-  "RAMP_UP=1" # default: 1
+  "RAMP_UP=0" # default: 1
   "LOOPS=1" # default: 1
   "WORK_DIR=$WORK_DIR"
 )
