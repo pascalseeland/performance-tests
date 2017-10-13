@@ -118,14 +118,19 @@
             <stringProp name="Argument.value">Course 10 Sessions</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="FORUM_10_POSTS_REF_ID_WITH_SUB" elementType="Argument">
-            <stringProp name="Argument.name">FORUM_10_POSTS_REF_ID_WITH_SUB</stringProp>
-            <stringProp name="Argument.value">11346_5</stringProp>
+          <elementProp name="FORUM_10_POSTS_REF_ID" elementType="Argument">
+            <stringProp name="Argument.name">FORUM_10_POSTS_REF_ID</stringProp>
+            <stringProp name="Argument.value">11346</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="FORUM_10_POSTS_NAME" elementType="Argument">
             <stringProp name="Argument.name">FORUM_10_POSTS_NAME</stringProp>
             <stringProp name="Argument.value">Thread &quot;Thread Titel&quot;</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FORUM_10_POSTS_THREAD_PK" elementType="Argument">
+            <stringProp name="Argument.name">FORUM_10_POSTS_THREAD_PK</stringProp>
+            <stringProp name="Argument.value">5</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -943,7 +948,7 @@
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">${PATH}/goto.php?target=frm_${FORUM_10_POSTS_REF_ID_WITH_SUB}&amp;client_id=default&amp;client_id=${CLIENT_ID}</stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php?target=frm_${FORUM_10_POSTS_REF_ID}_${FORUM_10_POSTS_THREAD_PK}&amp;client_id=default&amp;client_id=${CLIENT_ID}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -974,6 +979,16 @@
               <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
             </HtmlExtractor>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetForum10CmdNode" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+              <stringProp name="RegexExtractor.refname">ilGetForum10CmdNode</stringProp>
+              <stringProp name="RegexExtractor.regex">cmdNode=(.+?)&amp;</stringProp>
+              <stringProp name="RegexExtractor.template"></stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+            </RegexExtractor>
+            <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10HeaderImage" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
@@ -995,6 +1010,101 @@
               <intProp name="Assertion.test_type">1</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum10HeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10CmdNode" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="0"></stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">12</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10CmdNode</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 10 Toggle Thread Notification" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/ilias.php?ref_id=${FORUM_10_POSTS_REF_ID}&amp;cmdClass=ilobjforumgui&amp;thr_pk=${FORUM_10_POSTS_THREAD_PK}&amp;cmd=toggleThreadNotification&amp;cmdNode=${ilGetForum10CmdNode}&amp;baseClass=ilRepositoryGUI&amp;client_id=${CLIENT_ID}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10HeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10HeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10HeaderContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10HeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetForum10CmdNode" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+              <stringProp name="RegexExtractor.refname">ilGetForum10CmdNode</stringProp>
+              <stringProp name="RegexExtractor.regex">cmdNode=(.+?)&amp;</stringProp>
+              <stringProp name="RegexExtractor.template"></stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
+              <stringProp name="RegexExtractor.match_number"></stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10HeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10HeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10HeaderContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">1</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10HeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10CmdNode" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="0"></stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">12</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10CmdNode</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
