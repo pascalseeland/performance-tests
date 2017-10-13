@@ -39,9 +39,31 @@ JMETER_PROPERTIES=(
   # Alternative: Credentials from CSV
   # "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
 
+  #Calendar Properties
+  CALENDAR_DATE="2017-10-12"
+
+  #Course Properties
+  COURSE_99_SESSIONS_REF_ID="11229"
+  COURSE_99_SESSIONS_NAME='Course_99_Sessions'
+  COURSE_50_SESSIONS_REF_ID="11291"
+  COURSE_50_SESSIONS_NAME='Course_50_Sessions'
+  COURSE_10_SESSIONS_REF_ID="11342"
+  COURSE_10_SESSIONS_NAME='Course_10_Sessions'
+
+  #Forum Properties
+  FORUM_10_POSTS_REF_ID="11348"
+  FORUM_10_POSTS_NAME='Thread'
+  FORUM_10_POSTS_THREAD_PK="7"
+  FORUM_50_POSTS_REF_ID="11348"    # Ref-id of a forum object e.g. 11346
+  FORUM_50_POSTS_NAME="Thread"      # Name of the course above e.g. Thread
+  FORUM_50_POSTS_THREAD_PK="6" # PK of a forum thread e.g. 6
+  FORUM_100_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
+  FORUM_100_POSTS_NAME=""      # Name of the course above e.g. Thread
+  FORUM_100_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
+
   "THREADS=1" # default: 1
-  "RAMP_UP=0" # default: 1
-  "LOOPS=1" # default: 1
+  "RAMP_UP=1" # default: 1
+  "LOOPS=30" # default: 1
   "WORK_DIR=$WORK_DIR"
 )
 
