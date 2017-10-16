@@ -31,6 +31,7 @@ JMETER_PROPERTIES=(
   "CLIENT_ID=default" # e.g. ilias
   "IS_ADMIN=false" # default: false
   "READ_ONLY=true" # default: true
+   OUT_DIR="${OUT_DIR}"
 
   # Default: Static Credentials
   "USERNAME=root" # ILIAS-User
@@ -51,19 +52,20 @@ JMETER_PROPERTIES=(
   COURSE_10_SESSIONS_NAME='Course_10_Sessions'
 
   #Forum Properties
+  FORUM_THREADS_NAME="Forum"
   FORUM_10_POSTS_REF_ID="11348"
   FORUM_10_POSTS_NAME='Thread'
   FORUM_10_POSTS_THREAD_PK="7"
   FORUM_50_POSTS_REF_ID="11348"    # Ref-id of a forum object e.g. 11346
   FORUM_50_POSTS_NAME="Thread"      # Name of the course above e.g. Thread
   FORUM_50_POSTS_THREAD_PK="6" # PK of a forum thread e.g. 6
-  FORUM_100_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
-  FORUM_100_POSTS_NAME=""      # Name of the course above e.g. Thread
-  FORUM_100_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
+  FORUM_100_POSTS_REF_ID="11348"    # Ref-id of a forum object e.g. 11346
+  FORUM_100_POSTS_NAME="Thread"      # Name of the course above e.g. Thread
+  FORUM_100_POSTS_THREAD_PK="8" # PK of a forum thread e.g. 6
 
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
-  "LOOPS=30" # default: 1
+  "LOOPS=1" # default: 1
   "WORK_DIR=$WORK_DIR"
 )
 

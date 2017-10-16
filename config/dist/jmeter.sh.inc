@@ -31,6 +31,7 @@ JMETER_PROPERTIES=(
   "CLIENT_ID=ilias" # e.g. ilias
   "IS_ADMIN=false" # default: false
   "READ_ONLY=true" # default: true
+  OUT_DIR="${OUT_DIR}"
 
   # Default: Static Credentials
   "USERNAME=" # ILIAS-User
@@ -51,6 +52,7 @@ JMETER_PROPERTIES=(
   COURSE_10_SESSIONS_NAME=""   # Name of the course above e.g. Course_10_Sessions
 
   #Forum Properties
+  FORUM_THREADS_NAME="Forum"
   FORUM_10_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
   FORUM_10_POSTS_NAME=""      # Name of the course above e.g. Thread
   FORUM_10_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
