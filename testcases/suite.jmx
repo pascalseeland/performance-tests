@@ -1799,6 +1799,91 @@
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 10 Posts Order By Date" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_10_POSTS_REF_ID}_${FORUM_10_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10PostsOrderByDateHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10PostsOrderByDateContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10PostsOrderByDateHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByDateHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByDateContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10PostsOrderByDateHeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 10 Posts Toggle Notification First" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
@@ -2005,6 +2090,91 @@
             </RegexExtractor>
             <hashTree/>
           </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 10 Posts Order By Post" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_10_POSTS_REF_ID}_${FORUM_10_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10PostsOrderByPostHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum10PostsOrderByPostContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum10PostsOrderByPostHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByPostHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByPostContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum10PostsOrderByPostHeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 50 Posts" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
@@ -2126,6 +2296,176 @@
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum50CmdNode</stringProp>
               <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 50 Posts Order By Date" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_50_POSTS_REF_ID}_${FORUM_50_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum50PostsOrderByDateHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum50PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum50PostsOrderByDateContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum50PostsOrderByDateHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByDateHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum50PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByDateContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-329870729">${FORUM_50_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum50PostsOrderByDateHeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 50 Posts Order By Post" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_50_POSTS_REF_ID}_${FORUM_50_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum50PostsOrderByPostHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum50PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum50PostsOrderByPostContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum50PostsOrderByPostHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByPostHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum50PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByPostContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-329870729">${FORUM_50_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum50PostsOrderByPostHeaderContent</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
@@ -2456,6 +2796,284 @@
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum100CmdNode</stringProp>
               <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts OffSet 30" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_100_POSTS_REF_ID}_${FORUM_100_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="offset" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">offset</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100HeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100HeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100HeaderContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100HeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100URL" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100URL</stringProp>
+              <stringProp name="HtmlExtractor.expr">#left_nav .jstree-closed &gt; a</stringProp>
+              <stringProp name="HtmlExtractor.attribute">href</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              <stringProp name="Sample.scope">all</stringProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100HeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100HeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100HeaderContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100HeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100URL" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="36139">#NV</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">12</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100URL</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Order By Date" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_100_POSTS_REF_ID}_${FORUM_100_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100PostsOrderByDateHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100PostsOrderByDateHeaderContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100PostsOrderByDateHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByDateHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100PostsOrderByDateHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByDateHeaderContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100PostsOrderByDateHeaderContent</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Order By Post" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="target" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">frm_${FORUM_100_POSTS_REF_ID}_${FORUM_100_POSTS_THREAD_PK}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">target</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="viewmode" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">viewmode</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100PostsOrderByPostHeaderImage" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+              <stringProp name="HtmlExtractor.attribute">src</stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetForum100PostsOrderByPostHeaderContent" enabled="true">
+              <stringProp name="HtmlExtractor.refname">ilGetForum100PostsOrderByPostHeaderContent</stringProp>
+              <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+              <stringProp name="HtmlExtractor.attribute"></stringProp>
+              <stringProp name="HtmlExtractor.default">#NV</stringProp>
+              <stringProp name="HtmlExtractor.match_number"></stringProp>
+              <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+              <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+            </HtmlExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByPostHeaderImage" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2100511549">./templates/default/images/icon_frm.svg</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100PostsOrderByPostHeaderImage</stringProp>
+              <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByPostHeaderContent" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Assertion.scope">variable</stringProp>
+              <stringProp name="Scope.variable">ilGetForum100PostsOrderByPostHeaderContent</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
