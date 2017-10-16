@@ -46,26 +46,6 @@ JMETER_PROPERTIES=(
   CALENDAR_SESSION_REF_ID="" # Ref-id of session which should be opened
   CALENDAR_SESSION_NAME="" # Name of the session with was opened
 
-  #Course Properties
-  COURSE_99_SESSIONS_REF_ID="" # Ref-id of a course object with sessions e.g. 11229
-  COURSE_99_SESSIONS_NAME=""   # Name of the course above e.g. Course_99_Sessions
-  COURSE_50_SESSIONS_REF_ID="" # Ref-id of a course object with sessions e.g. 11291
-  COURSE_50_SESSIONS_NAME=""   # Name of the course above e.g. Course_50_Sessions
-  COURSE_10_SESSIONS_REF_ID="" # Ref-id of a course object with sessions e.g. 11342
-  COURSE_10_SESSIONS_NAME=""   # Name of the course above e.g. Course_10_Sessions
-
-  #Forum Properties
-  FORUM_THREADS_NAME="Forum"
-  FORUM_10_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
-  FORUM_10_POSTS_NAME=""      # Name of the course above e.g. Thread
-  FORUM_10_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
-  FORUM_50_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
-  FORUM_50_POSTS_NAME=""      # Name of the course above e.g. Thread
-  FORUM_50_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
-  FORUM_100_POSTS_REF_ID=""    # Ref-id of a forum object e.g. 11346
-  FORUM_100_POSTS_NAME=""      # Name of the course above e.g. Thread
-  FORUM_100_POSTS_THREAD_PK="" # PK of a forum thread e.g. 6
-
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
   "LOOPS=1" # default: 1

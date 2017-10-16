@@ -30,12 +30,12 @@ JMETER_PROPERTIES=(
   "PORT=80" # e.g. 80, 443
   "CLIENT_ID=default" # e.g. ilias
   "IS_ADMIN=false" # default: false
-  "READ_ONLY=true" # default: true
+  "READ_ONLY=false" # default: true
    OUT_DIR="${OUT_DIR}"
 
   # Default: Static Credentials
-  "USERNAME=root" # ILIAS-User
-  "PASSWORD=homer" # ILIAS-Password
+  "USERNAME=dummy27" # ILIAS-User
+  "PASSWORD=dummy" # ILIAS-Password
 
   # Alternative: Credentials from CSV
   # "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
@@ -44,26 +44,6 @@ JMETER_PROPERTIES=(
   CALENDAR_DATE="2017-10-12"
   CALENDAR_SESSION_REF_ID="11223" # Ref-id of session which should be opened
   CALENDAR_SESSION_NAME="05.%20Oct%202017%2C%2008%3A00%20-%2012.%20Oct%202017%2C%2011%3A45" # Name of the session with was opened
-
-  #Course Properties
-  COURSE_99_SESSIONS_REF_ID="11229"
-  COURSE_99_SESSIONS_NAME='Course_99_Sessions'
-  COURSE_50_SESSIONS_REF_ID="11291"
-  COURSE_50_SESSIONS_NAME='Course_50_Sessions'
-  COURSE_10_SESSIONS_REF_ID="11342"
-  COURSE_10_SESSIONS_NAME='Course_10_Sessions'
-
-  #Forum Properties
-  FORUM_THREADS_NAME="Forum"
-  FORUM_10_POSTS_REF_ID="11348"
-  FORUM_10_POSTS_NAME='Thread%20"Thread%20Titel%2010"'
-  FORUM_10_POSTS_THREAD_PK="7"
-  FORUM_50_POSTS_REF_ID="11348"    # Ref-id of a forum object e.g. 11346
-  FORUM_50_POSTS_NAME='Thread%20"Thread%20Titel%2050"'      # Name of the course above e.g. Thread
-  FORUM_50_POSTS_THREAD_PK="6" # PK of a forum thread e.g. 6
-  FORUM_100_POSTS_REF_ID="11348"    # Ref-id of a forum object e.g. 11346
-  FORUM_100_POSTS_NAME='Thread%20"Thread%20Titel%20100"'    # Name of the course above e.g. Thread
-  FORUM_100_POSTS_THREAD_PK="8" # PK of a forum thread e.g. 6
 
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
