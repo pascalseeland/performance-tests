@@ -93,6 +93,16 @@
             <stringProp name="Argument.value">${__P(CALENDAR_DATE,#NV)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="CALENDAR_SESSION_REF_ID" elementType="Argument">
+            <stringProp name="Argument.name">CALENDAR_SESSION_REF_ID</stringProp>
+            <stringProp name="Argument.value">${__P(CALENDAR_SESSION_REF_ID,#NV)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CALENDAR_SESSION_NAME" elementType="Argument">
+            <stringProp name="Argument.name">CALENDAR_SESSION_NAME</stringProp>
+            <stringProp name="Argument.value">${__P(CALENDAR_SESSION_NAME,#NV)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="COURSE_99_SESSIONS_REF_ID" elementType="Argument">
             <stringProp name="Argument.name">COURSE_99_SESSIONS_REF_ID</stringProp>
             <stringProp name="Argument.value">${__P(COURSE_99_SESSIONS_REF_ID,#NV)}</stringProp>
@@ -616,6 +626,264 @@
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="true"/>
         <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalSettings" enabled="true"/>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Ensure personal language is english getFormURL" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="baseClass" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">baseClass</stringProp>
+                  </elementProp>
+                  <elementProp name="cmd" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">jumpToSettings</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">cmd</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetPersonalProfileFormUrl" enabled="true">
+                <stringProp name="HtmlExtractor.refname">ilGetPersonalProfileFormUrl</stringProp>
+                <stringProp name="HtmlExtractor.expr">#form_</stringProp>
+                <stringProp name="HtmlExtractor.attribute">action</stringProp>
+                <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                <stringProp name="HtmlExtractor.match_number"></stringProp>
+                <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              </HtmlExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetPersonalProfileFormUrl" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="36139">#NV</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">12</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">ilGetPersonalProfileFormUrl</stringProp>
+                <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Ensure personal language is english" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="cmd[saveGeneralSettings]" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">true</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">cmd[saveGeneralSettings]</stringProp>
+                  </elementProp>
+                  <elementProp name="language" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">en</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">language</stringProp>
+                  </elementProp>
+                  <elementProp name="skin_style" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">default:delos</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">skin_style</stringProp>
+                  </elementProp>
+                  <elementProp name="screen_reader_optimization" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">screen_reader_optimization</stringProp>
+                  </elementProp>
+                  <elementProp name="hits_per_page" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">9999</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">hits_per_page</stringProp>
+                  </elementProp>
+                  <elementProp name="store_last_visited" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">store_last_visited</stringProp>
+                  </elementProp>
+                  <elementProp name="bs_allow_to_contact_me" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">bs_allow_to_contact_me</stringProp>
+                  </elementProp>
+                  <elementProp name="timezone" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">Europe/Berlin</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">timezone</stringProp>
+                  </elementProp>
+                  <elementProp name="date_format" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">date_format</stringProp>
+                  </elementProp>
+                  <elementProp name="time_format" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">1</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">time_format</stringProp>
+                  </elementProp>
+                  <elementProp name="char_selector_availability" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">0</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">char_selector_availability</stringProp>
+                  </elementProp>
+                  <elementProp name="char_selector_blocks[0]" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">all</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">char_selector_blocks[0]</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${PATH}/${ilGetPersonalProfileFormUrl}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetSuccessAfterSaving" enabled="true">
+                <stringProp name="HtmlExtractor.refname">ilGetSuccessAfterSaving</stringProp>
+                <stringProp name="HtmlExtractor.expr">.ilAdminRow .alert</stringProp>
+                <stringProp name="HtmlExtractor.attribute">class</stringProp>
+                <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                <stringProp name="HtmlExtractor.match_number"></stringProp>
+                <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              </HtmlExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetSuccessAfterSaving" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1007402190">alert alert-success</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">ilGetSuccessAfterSaving</stringProp>
+                <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Empty Password Form can not be saved" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="cmd[savePassword]" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">true</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">cmd[savePassword]</stringProp>
+                  </elementProp>
+                  <elementProp name="current_password" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">current_password</stringProp>
+                  </elementProp>
+                  <elementProp name="new_password" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">new_password</stringProp>
+                  </elementProp>
+                  <elementProp name="new_password_retype" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">new_password_retype</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${PATH}/${ilGetPersonalProfileFormUrl}</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetErrorAfterSaving" enabled="true">
+                <stringProp name="HtmlExtractor.refname">ilGetErrorAfterSaving</stringProp>
+                <stringProp name="HtmlExtractor.expr">.ilAdminRow .alert</stringProp>
+                <stringProp name="HtmlExtractor.attribute">class</stringProp>
+                <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                <stringProp name="HtmlExtractor.match_number"></stringProp>
+                <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              </HtmlExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetErrorAfterSaving" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-553626632">alert alert-danger</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">ilGetErrorAfterSaving</stringProp>
+                <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Selected Items" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
@@ -911,15 +1179,6 @@
             <hashTree>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
-                <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
-                <stringProp name="RegexExtractor.template"></stringProp>
-                <stringProp name="RegexExtractor.default"></stringProp>
-                <stringProp name="RegexExtractor.match_number"></stringProp>
-              </RegexExtractor>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">ilGetCalendarWeekCommandNode</stringProp>
                 <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarweekgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
                 <stringProp name="RegexExtractor.template"></stringProp>
@@ -931,6 +1190,15 @@
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">ilGetCalendarMonthCommandNode</stringProp>
                 <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarmonthgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
+                <stringProp name="RegexExtractor.template"></stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
+                <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
                 <stringProp name="RegexExtractor.template"></stringProp>
                 <stringProp name="RegexExtractor.default"></stringProp>
                 <stringProp name="RegexExtractor.match_number"></stringProp>
@@ -1420,9 +1688,87 @@
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="target" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">sess_${CALENDAR_SESSION_REF_ID}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">target</stringProp>
+                  </elementProp>
+                  <elementProp name="client_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">client_id</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetViewSessionHeaderImage" enabled="true">
+                <stringProp name="HtmlExtractor.refname">ilGetViewSessionHeaderImage</stringProp>
+                <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+                <stringProp name="HtmlExtractor.attribute">src</stringProp>
+                <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                <stringProp name="HtmlExtractor.match_number"></stringProp>
+                <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              </HtmlExtractor>
+              <hashTree/>
+              <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetSessionViewHeaderContent" enabled="true">
+                <stringProp name="HtmlExtractor.refname">ilGetSessionViewHeaderContent</stringProp>
+                <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+                <stringProp name="HtmlExtractor.attribute"></stringProp>
+                <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                <stringProp name="HtmlExtractor.match_number"></stringProp>
+                <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+              </HtmlExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetViewSessionHeaderImage" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="2071143292">./templates/default/images/icon_sess.svg</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">ilGetViewSessionHeaderImage</stringProp>
+                <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetSessionViewHeaderContent" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-645374027">${__urldecode(${CALENDAR_SESSION_NAME})}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+                <stringProp name="Assertion.scope">variable</stringProp>
+                <stringProp name="Scope.variable">ilGetSessionViewHeaderContent</stringProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1531,7 +1877,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course 10 Sessions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1601,7 +1947,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourse10HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="142646275">${COURSE_10_SESSIONS_NAME}</stringProp>
+                <stringProp name="-1666068583">${__urldecode(${COURSE_10_SESSIONS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1679,7 +2025,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourse50HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1260917767">${COURSE_50_SESSIONS_NAME}</stringProp>
+                <stringProp name="-748988771">${__urldecode(${COURSE_50_SESSIONS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1757,7 +2103,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourse99HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="2079348962">${COURSE_99_SESSIONS_NAME}</stringProp>
+                <stringProp name="-215625544">${__urldecode(${COURSE_99_SESSIONS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1768,7 +2114,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum Threads Overview" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1838,7 +2184,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumThreadsHeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-1973318105">${FORUM_THREADS_NAME}</stringProp>
+                <stringProp name="-1244086855">${__urldecode(${FORUM_THREADS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1938,11 +2284,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="559235729">${__urldecode(${FORUM_10_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum10HeaderContent</stringProp>
             </ResponseAssertion>
@@ -2047,11 +2393,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByDateContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="559235729">${__urldecode(${FORUM_10_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum10PostsOrderByDateHeaderContent</stringProp>
             </ResponseAssertion>
@@ -2338,7 +2684,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum10PostsOrderByPostContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="559235729">${__urldecode(${FORUM_10_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -2438,7 +2784,7 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-329870729">${FORUM_50_POSTS_NAME}</stringProp>
+                <stringProp name="-1482900979">${__urldecode(${FORUM_50_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -2547,11 +2893,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByDateContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-329870729">${FORUM_50_POSTS_NAME}</stringProp>
+                <stringProp name="-1482900979">${__urldecode(${FORUM_50_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum50PostsOrderByDateHeaderContent</stringProp>
             </ResponseAssertion>
@@ -2632,11 +2978,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum50PostsOrderByPostContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-329870729">${FORUM_50_POSTS_NAME}</stringProp>
+                <stringProp name="-1482900979">${__urldecode(${FORUM_50_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum50PostsOrderByPostHeaderContent</stringProp>
             </ResponseAssertion>
@@ -2938,11 +3284,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="-2089244715">${__urldecode(${FORUM_100_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum100HeaderContent</stringProp>
             </ResponseAssertion>
@@ -3058,11 +3404,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100HeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="-2089244715">${__urldecode(${FORUM_100_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum100HeaderContent</stringProp>
             </ResponseAssertion>
@@ -3155,11 +3501,11 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByDateHeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="-2089244715">${__urldecode(${FORUM_100_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum100PostsOrderByDateHeaderContent</stringProp>
             </ResponseAssertion>
@@ -3240,17 +3586,17 @@
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForum100PostsOrderByPostHeaderContent" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="1692363771">${FORUM_10_POSTS_NAME}</stringProp>
+                <stringProp name="-2089244715">${__urldecode(${FORUM_100_POSTS_NAME})}</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
+              <intProp name="Assertion.test_type">8</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">ilGetForum100PostsOrderByPostHeaderContent</stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Toggle Notification Second" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Toggle Notification First" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -3353,7 +3699,7 @@
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Toggle Notification First" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum 100 Posts Toggle Notification Second" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="cmdClass" elementType="HTTPArgument">
