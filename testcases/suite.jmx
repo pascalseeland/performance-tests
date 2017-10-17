@@ -311,7 +311,7 @@
         </IfController>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__javaScript(&quot;${users_login}&quot; != &quot;###STOP###&quot;)}</stringProp>
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${USERNAME}&quot; != &quot;###STOP###&quot;)}</stringProp>
           </WhileController>
           <hashTree>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -327,7 +327,7 @@
             </CSVDataSet>
             <hashTree/>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${users_login}&quot; != &quot;###STOP###&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${USERNAME}&quot; != &quot;###STOP###&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <stringProp name="TestPlan.comments">If we don&apos;t have a thread id, we are in the forum overview</stringProp>
             </IfController>
