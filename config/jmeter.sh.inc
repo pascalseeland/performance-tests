@@ -38,11 +38,11 @@ JMETER_PROPERTIES=(
   "PASSWORD=dummy" # ILIAS-Password
 
   # Alternative: Credentials from CSV
-  # "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
+  "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
 
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
-  "LOOPS=1" # default: 1
+  "LOOPS=2" # default: 1
   "WORK_DIR=$WORK_DIR"
 )
 

@@ -305,6 +305,19 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">String currentLoop = &quot;${__BeanShell(vars.getIteration();,)}&quot;;
+if(currentLoop	!= vars.get(&quot;my_custom_iteration_counter&quot;)) {
+	vars.put(&quot;courses_ref_id&quot;,&quot;&quot;);
+	vars.put(&quot;forum_ref_id&quot;,&quot;&quot;);
+	vars.put(&quot;calendar_date&quot;,&quot;&quot;);
+}
+vars.put(&quot;my_custom_iteration_counter&quot;, currentLoop);</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TEST Login" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
@@ -1049,7 +1062,7 @@
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Calendar" enabled="true"/>
           <hashTree>
             <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-              <stringProp name="WhileController.condition">${__javaScript(&quot;${calendar_date}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+              <stringProp name="WhileController.condition">${__javaScript(&quot;${calendar_date}&quot; != &quot;###STOP###&quot;,)}</stringProp>
             </WhileController>
             <hashTree>
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -1059,13 +1072,13 @@
                 <boolProp name="ignoreFirstLine">false</boolProp>
                 <stringProp name="delimiter">,</stringProp>
                 <boolProp name="quotedData">false</boolProp>
-                <boolProp name="recycle">false</boolProp>
+                <boolProp name="recycle">true</boolProp>
                 <boolProp name="stopThread">false</boolProp>
                 <stringProp name="shareMode">shareMode.group</stringProp>
               </CSVDataSet>
               <hashTree/>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-                <stringProp name="IfController.condition">&quot;${calendar_date}&quot; != &quot;&lt;EOF&gt;&quot;</stringProp>
+                <stringProp name="IfController.condition">&quot;${calendar_date}&quot; != &quot;###STOP###&quot;</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
               </IfController>
               <hashTree>
@@ -1808,7 +1821,7 @@
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_name}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
           </WhileController>
           <hashTree>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -1818,14 +1831,15 @@
               <boolProp name="ignoreFirstLine">false</boolProp>
               <stringProp name="delimiter">,</stringProp>
               <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
               <boolProp name="stopThread">false</boolProp>
               <stringProp name="shareMode">shareMode.group</stringProp>
             </CSVDataSet>
             <hashTree/>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${courses_ref_id}&quot; != &quot;&lt;EOF&gt;&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
+              <stringProp name="TestPlan.comments">If we don&apos;t have a thread id, we are in the forum overview</stringProp>
             </IfController>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course Sessions ${courses_name}" enabled="true">
@@ -1912,7 +1926,7 @@
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
           </WhileController>
           <hashTree>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
@@ -1922,13 +1936,13 @@
               <boolProp name="ignoreFirstLine">false</boolProp>
               <stringProp name="delimiter">,</stringProp>
               <boolProp name="quotedData">false</boolProp>
-              <boolProp name="recycle">false</boolProp>
+              <boolProp name="recycle">true</boolProp>
               <boolProp name="stopThread">false</boolProp>
               <stringProp name="shareMode">shareMode.group</stringProp>
             </CSVDataSet>
             <hashTree/>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${forum_pk}&quot; == &quot;&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot; &amp;&amp; &quot;${forum_pk}&quot; == &quot;&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <stringProp name="TestPlan.comments">If we don&apos;t have a thread id, we are in the forum overview</stringProp>
             </IfController>
@@ -2013,7 +2027,7 @@
               </hashTree>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${forum_pk}&quot; != &quot;&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot; &amp;&amp; &quot;${forum_pk}&quot; != &quot;&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <stringProp name="TestPlan.comments">If we have a threa id, we are in a thread view</stringProp>
             </IfController>
