@@ -1049,13 +1049,13 @@
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Calendar" enabled="true"/>
           <hashTree>
             <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-              <stringProp name="WhileController.condition">${__javaScript(&quot;${name}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+              <stringProp name="WhileController.condition">${__javaScript(&quot;${calendar_date}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
             </WhileController>
             <hashTree>
               <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
                 <stringProp name="filename">config/calendar_and_sessions.csv</stringProp>
                 <stringProp name="fileEncoding">UTF-8</stringProp>
-                <stringProp name="variableNames">date, ref_id, name</stringProp>
+                <stringProp name="variableNames">calendar_date,calendar_ref_id,calendar_name</stringProp>
                 <boolProp name="ignoreFirstLine">false</boolProp>
                 <stringProp name="delimiter">,</stringProp>
                 <boolProp name="quotedData">false</boolProp>
@@ -1065,11 +1065,11 @@
               </CSVDataSet>
               <hashTree/>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-                <stringProp name="IfController.condition">&quot;${ref_id}&quot; != &quot;&lt;EOF&gt;&quot;</stringProp>
+                <stringProp name="IfController.condition">&quot;${calendar_date}&quot; != &quot;&lt;EOF&gt;&quot;</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
               </IfController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSTRAINT Calendar CommandNode" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CONSTRAINT Calendar CommandNode for ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1167,7 +1167,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1186,7 +1186,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1238,7 +1238,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Day " enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Day ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmd" elementType="HTTPArgument">
@@ -1264,7 +1264,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1316,7 +1316,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1335,7 +1335,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1387,7 +1387,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Week " enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Week ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmd" elementType="HTTPArgument">
@@ -1413,7 +1413,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1465,7 +1465,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1484,7 +1484,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1536,7 +1536,7 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Month " enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Month ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1562,7 +1562,7 @@
                       </elementProp>
                       <elementProp name="seed" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${date}</stringProp>
+                        <stringProp name="Argument.value">${calendar_date}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">seed</stringProp>
@@ -1614,12 +1614,12 @@
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view ${calendar_date}" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="target" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">sess_${ref_id}</stringProp>
+                        <stringProp name="Argument.value">sess_${calendar_ref_id}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">target</stringProp>
@@ -1682,7 +1682,7 @@
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetSessionViewHeaderContent" enabled="true">
                     <collectionProp name="Asserion.test_strings">
-                      <stringProp name="-1422422035">${__urldecode(${name})}</stringProp>
+                      <stringProp name="-1130020738">${__urldecode(${calendar_name})}</stringProp>
                     </collectionProp>
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1806,17 +1806,15 @@
           </hashTree>
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
-        <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
         <hashTree>
           <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
-            <stringProp name="WhileController.condition">${__javaScript(&quot;${pk}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_name}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
           </WhileController>
           <hashTree>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-              <stringProp name="filename">config/forum_objects.csv</stringProp>
+              <stringProp name="filename">config/course_objects.csv</stringProp>
               <stringProp name="fileEncoding">UTF-8</stringProp>
-              <stringProp name="variableNames">ref_id,pk, name</stringProp>
+              <stringProp name="variableNames">courses_ref_id, courses_name</stringProp>
               <boolProp name="ignoreFirstLine">false</boolProp>
               <stringProp name="delimiter">,</stringProp>
               <boolProp name="quotedData">false</boolProp>
@@ -1826,17 +1824,121 @@
             </CSVDataSet>
             <hashTree/>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${pk}&quot; == &quot;&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${courses_ref_id}&quot; != &quot;&lt;EOF&gt;&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
-              <stringProp name="TestPlan.comments">If we don&apos;t have a thread id, we are in the forum overview</stringProp>
             </IfController>
             <hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum Threads Overview" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course Sessions ${courses_name}" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="target" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">frm_${ref_id}</stringProp>
+                      <stringProp name="Argument.value">crs_${courses_ref_id}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                      <stringProp name="Argument.name">target</stringProp>
+                    </elementProp>
+                    <elementProp name="client_id" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">${CLIENT_ID}</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                      <stringProp name="Argument.name">client_id</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">${PATH}/goto.php</stringProp>
+                <stringProp name="HTTPSampler.method">GET</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCourseHeaderImage" enabled="true">
+                  <stringProp name="HtmlExtractor.refname">ilGetCourseHeaderImage</stringProp>
+                  <stringProp name="HtmlExtractor.expr">#headerimage</stringProp>
+                  <stringProp name="HtmlExtractor.attribute">src</stringProp>
+                  <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                  <stringProp name="HtmlExtractor.match_number"></stringProp>
+                  <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                  <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+                </HtmlExtractor>
+                <hashTree/>
+                <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCourseHeaderContent" enabled="true">
+                  <stringProp name="HtmlExtractor.refname">ilGetCourseHeaderContent</stringProp>
+                  <stringProp name="HtmlExtractor.expr">#il_mhead_t_focus</stringProp>
+                  <stringProp name="HtmlExtractor.attribute"></stringProp>
+                  <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                  <stringProp name="HtmlExtractor.match_number"></stringProp>
+                  <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                  <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+                </HtmlExtractor>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderImage" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="-462514170">./templates/default/images/icon_crs.svg</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">16</intProp>
+                  <stringProp name="Assertion.scope">variable</stringProp>
+                  <stringProp name="Scope.variable">ilGetCourseHeaderImage</stringProp>
+                  <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderContent" enabled="true">
+                  <collectionProp name="Asserion.test_strings">
+                    <stringProp name="-265122970">${__urldecode(${courses_name})}</stringProp>
+                  </collectionProp>
+                  <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                  <boolProp name="Assertion.assume_success">false</boolProp>
+                  <intProp name="Assertion.test_type">1</intProp>
+                  <stringProp name="Assertion.scope">variable</stringProp>
+                  <stringProp name="Scope.variable">ilGetCourseHeaderContent</stringProp>
+                </ResponseAssertion>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
+        <hashTree>
+          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+          </WhileController>
+          <hashTree>
+            <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+              <stringProp name="filename">config/forum_objects.csv</stringProp>
+              <stringProp name="fileEncoding">UTF-8</stringProp>
+              <stringProp name="variableNames">forum_ref_id,forum_pk, forum_name</stringProp>
+              <boolProp name="ignoreFirstLine">false</boolProp>
+              <stringProp name="delimiter">,</stringProp>
+              <boolProp name="quotedData">false</boolProp>
+              <boolProp name="recycle">false</boolProp>
+              <boolProp name="stopThread">false</boolProp>
+              <stringProp name="shareMode">shareMode.group</stringProp>
+            </CSVDataSet>
+            <hashTree/>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+              <stringProp name="IfController.condition">&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${forum_pk}&quot; == &quot;&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+              <stringProp name="TestPlan.comments">If we don&apos;t have a thread id, we are in the forum overview</stringProp>
+            </IfController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum Threads Overview for ${__urldecode(${forum_name})}" enabled="true">
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="target" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value">frm_${forum_ref_id}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">target</stringProp>
@@ -1899,7 +2001,7 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumThreadsHeaderContent" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-1422422035">${__urldecode(${name})}</stringProp>
+                    <stringProp name="374569359">${__urldecode(${forum_name})}</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1911,17 +2013,17 @@
               </hashTree>
             </hashTree>
             <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-              <stringProp name="IfController.condition">&quot;${pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${pk}&quot; != &quot;&quot;</stringProp>
+              <stringProp name="IfController.condition">&quot;${forum_pk}&quot; != &quot;&lt;EOF&gt;&quot; &amp;&amp; &quot;${forum_pk}&quot; != &quot;&quot;</stringProp>
               <boolProp name="IfController.evaluateAll">false</boolProp>
               <stringProp name="TestPlan.comments">If we have a threa id, we are in a thread view</stringProp>
             </IfController>
             <hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${name})}" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${forum_name})}" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="target" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">frm_${ref_id}_${pk}</stringProp>
+                      <stringProp name="Argument.value">frm_${forum_ref_id}_${forum_pk}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">target</stringProp>
@@ -2006,7 +2108,7 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumHeaderContent" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-1422422035">${__urldecode(${name})}</stringProp>
+                    <stringProp name="374569359">${__urldecode(${forum_name})}</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
@@ -2040,7 +2142,7 @@
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${name})} Posts Order By Post" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${forum_name})} Posts Order By Post" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="viewmode" elementType="HTTPArgument">
@@ -2052,7 +2154,7 @@
                     </elementProp>
                     <elementProp name="target" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">frm_${ref_id}_${pk}</stringProp>
+                      <stringProp name="Argument.value">frm_${forum_ref_id}_${forum_pk}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">target</stringProp>
@@ -2115,7 +2217,7 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumPostsOrderByPostContent" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-1422422035">${__urldecode(${name})}</stringProp>
+                    <stringProp name="374569359">${__urldecode(${forum_name})}</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
@@ -2125,7 +2227,7 @@
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${name})} Posts Order By Date" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${forum_name})} Posts Order By Date" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="viewmode" elementType="HTTPArgument">
@@ -2137,7 +2239,7 @@
                     </elementProp>
                     <elementProp name="target" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">frm_${ref_id}_${pk}</stringProp>
+                      <stringProp name="Argument.value">frm_${forum_ref_id}_${forum_pk}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">target</stringProp>
@@ -2200,7 +2302,7 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumPostsOrderByDateContent" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-1422422035">${__urldecode(${name})}</stringProp>
+                    <stringProp name="374569359">${__urldecode(${forum_name})}</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
@@ -2210,7 +2312,7 @@
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${name})} Posts Toggle Notification First" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${forum_name})} Posts Toggle Notification First" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -2236,14 +2338,14 @@
                     </elementProp>
                     <elementProp name="ref_id" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">${ref_id}</stringProp>
+                      <stringProp name="Argument.value">${forum_ref_id}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">ref_id</stringProp>
                     </elementProp>
                     <elementProp name="thr_pk" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">${pk}</stringProp>
+                      <stringProp name="Argument.value">${forum_pk}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">thr_pk</stringProp>
@@ -2313,7 +2415,7 @@
                 </RegexExtractor>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${name})} Posts Toggle Notification Second" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Forum ${__urldecode(${forum_name})} Posts Toggle Notification Second" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -2339,14 +2441,14 @@
                     </elementProp>
                     <elementProp name="ref_id" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">${ref_id}</stringProp>
+                      <stringProp name="Argument.value">${forum_ref_id}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">ref_id</stringProp>
                     </elementProp>
                     <elementProp name="thr_pk" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">${pk}</stringProp>
+                      <stringProp name="Argument.value">${forum_pk}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">thr_pk</stringProp>
