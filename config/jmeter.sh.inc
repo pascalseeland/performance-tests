@@ -40,11 +40,6 @@ JMETER_PROPERTIES=(
   # Alternative: Credentials from CSV
   # "CREDENTIALS_CSV=$WORK_DIR/config/users.csv" # OVERRIDE username and password with values from this CSV file
 
-  #Calendar Properties
-  CALENDAR_DATE="2017-10-12"
-  CALENDAR_SESSION_REF_ID="11223" # Ref-id of session which should be opened
-  CALENDAR_SESSION_NAME="05.%20Oct%202017%2C%2008%3A00%20-%2012.%20Oct%202017%2C%2011%3A45" # Name of the session with was opened
-
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
   "LOOPS=1" # default: 1
