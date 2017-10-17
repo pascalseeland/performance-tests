@@ -42,7 +42,7 @@ JMETER_PROPERTIES=(
 
   "THREADS=1" # default: 1
   "RAMP_UP=1" # default: 1
-  "LOOPS=2" # default: 1
+  "LOOPS=1" # default: 1
   "WORK_DIR=$WORK_DIR"
 )
 
