@@ -305,17 +305,19 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Reset Loop Variables if loop changes" enabled="true">
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <boolProp name="resetInterpreter">false</boolProp>
           <stringProp name="script">String currentLoop = &quot;${__BeanShell(vars.getIteration();,)}&quot;;
-if(currentLoop	!= vars.get(&quot;my_custom_iteration_counter&quot;)) {
+String currentThread = &quot;${__BeanShell(ctx.getThreadNum();,)}&quot;;
+if(currentLoop	!= vars.get(&quot;my_custom_iteration_counter&quot;) &amp;&amp; currentThread == vars.get(&quot;my_custom_thread_counter&quot;)) {
 	vars.put(&quot;courses_ref_id&quot;,&quot;&quot;);
 	vars.put(&quot;forum_ref_id&quot;,&quot;&quot;);
 	vars.put(&quot;calendar_date&quot;,&quot;&quot;);
 }
-vars.put(&quot;my_custom_iteration_counter&quot;, currentLoop);</stringProp>
+vars.put(&quot;my_custom_iteration_counter&quot;, currentLoop);
+vars.put(&quot;my_custom_thread_counter&quot;, currentThread);</stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="TEST Login" enabled="true">
