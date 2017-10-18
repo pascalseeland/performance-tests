@@ -2063,7 +2063,21 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 <stringProp name="IfController.condition">${THREADS} == 1 &amp;&amp; ${IS_ADMIN2} == true</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
               </IfController>
+              <hashTree/>
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+                <boolProp name="LoopController.continue_forever">true</boolProp>
+                <stringProp name="LoopController.loops">1</stringProp>
+              </LoopController>
               <hashTree>
+                <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ilCourseCreationCounter" enabled="true">
+                  <stringProp name="CounterConfig.start">1</stringProp>
+                  <stringProp name="CounterConfig.end"></stringProp>
+                  <stringProp name="CounterConfig.incr">3</stringProp>
+                  <stringProp name="CounterConfig.name">ilCourseCreationCounter</stringProp>
+                  <stringProp name="CounterConfig.format"></stringProp>
+                  <boolProp name="CounterConfig.per_user">false</boolProp>
+                </CounterConfig>
+                <hashTree/>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Course" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                     <collectionProp name="Arguments.arguments">
@@ -2171,7 +2185,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </elementProp>
                       <elementProp name="title" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">${__samplerName} @ ${__time(Y-M-D_HH:MM:SS)}</stringProp>
+                        <stringProp name="Argument.value">${__samplerName} @ ${__time(Y-M-D_HH:MM:SS)}_with ${ilCourseCreationSessions} Sessions</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">title</stringProp>
@@ -2360,7 +2374,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course Sessions" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course Sessions" enabled="false">
                   <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                     <collectionProp name="HTTPFileArgs.files">
                       <elementProp name="README.md" elementType="HTTPFileArg">
@@ -2402,7 +2416,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </elementProp>
                       <elementProp name="count" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">10</stringProp>
+                        <stringProp name="Argument.value">${ilCourseCreationSessions}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">count</stringProp>
@@ -2488,6 +2502,15 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">int sessions = Integer.parseInt(vars.get(&quot;ilCourseCreationCounter&quot;));
+sessions = 10 * sessions;
+vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</stringProp>
+                </BeanShellPreProcessor>
+                <hashTree/>
               </hashTree>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
