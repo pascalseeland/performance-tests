@@ -679,7 +679,7 @@ vars.put(&quot;my_custom_thread_counter&quot;, currentThread);
 vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="true"/>
             <hashTree>
               <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalSettings" enabled="true"/>
               <hashTree>
@@ -1846,7 +1846,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1955,7 +1955,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -2060,7 +2060,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -3798,7 +3798,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="false">
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
                 <boolProp name="LoopController.continue_forever">true</boolProp>
                 <stringProp name="LoopController.loops">4</stringProp>
               </LoopController>
@@ -3835,7 +3835,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="ref_id" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">GetLastcreatedCategoryRefId_g1</stringProp>
+                        <stringProp name="Argument.value">${ilGetLastcreatedCategoryRefId_g1}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">ref_id</stringProp>
