@@ -2066,7 +2066,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
               <hashTree>
                 <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
                   <boolProp name="LoopController.continue_forever">true</boolProp>
-                  <stringProp name="LoopController.loops">4</stringProp>
+                  <stringProp name="LoopController.loops">1</stringProp>
                 </LoopController>
                 <hashTree>
                   <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ilCourseCreationCounter" enabled="true">
@@ -2256,11 +2256,13 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCourseRefId" enabled="true">
                       <collectionProp name="Asserion.test_strings">
-                        <stringProp name="36139">#NV</stringProp>
+                        <stringProp name="-776220837">(?!#NV)\d+</stringProp>
                       </collectionProp>
                       <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                       <boolProp name="Assertion.assume_success">false</boolProp>
-                      <intProp name="Assertion.test_type">20</intProp>
+                      <intProp name="Assertion.test_type">1</intProp>
+                      <stringProp name="Assertion.scope">variable</stringProp>
+                      <stringProp name="Scope.variable">ilGetNewCourseRefId</stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
