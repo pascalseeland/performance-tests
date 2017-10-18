@@ -679,7 +679,7 @@ vars.put(&quot;my_custom_thread_counter&quot;, currentThread);
 vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="false"/>
             <hashTree>
               <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalSettings" enabled="true"/>
               <hashTree>
@@ -1846,7 +1846,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1955,7 +1955,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="false"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -2060,7 +2060,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -3041,6 +3041,15 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
                     </HtmlExtractor>
                     <hashTree/>
+                    <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetLastcreatedCategoryRefId" enabled="true">
+                      <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+                      <stringProp name="RegexExtractor.refname">ilGetLastcreatedCategoryRefId</stringProp>
+                      <stringProp name="RegexExtractor.regex">ref_id=(.+?)&amp;</stringProp>
+                      <stringProp name="RegexExtractor.template"></stringProp>
+                      <stringProp name="RegexExtractor.default">#NV</stringProp>
+                      <stringProp name="RegexExtractor.match_number">1</stringProp>
+                    </RegexExtractor>
+                    <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="FatalError" enabled="true">
                       <collectionProp name="Asserion.test_strings">
                         <stringProp name="36139">#NV</stringProp>
@@ -3082,6 +3091,17 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <stringProp name="Assertion.test_field">Assertion.sample_label</stringProp>
                       <boolProp name="Assertion.assume_success">false</boolProp>
                       <intProp name="Assertion.test_type">6</intProp>
+                    </ResponseAssertion>
+                    <hashTree/>
+                    <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLastcreatedCategoryRefId" enabled="true">
+                      <collectionProp name="Asserion.test_strings">
+                        <stringProp name="-776220837">(?!#NV)\d+</stringProp>
+                      </collectionProp>
+                      <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                      <boolProp name="Assertion.assume_success">false</boolProp>
+                      <intProp name="Assertion.test_type">1</intProp>
+                      <stringProp name="Assertion.scope">variable</stringProp>
+                      <stringProp name="Scope.variable">ilGetLastcreatedCategoryRefId_g1</stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -3368,7 +3388,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="ref_id" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">33192</stringProp>
+                      <stringProp name="Argument.value">${ilGetLastcreatedCategoryRefId_g1}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                       <stringProp name="Argument.name">ref_id</stringProp>
@@ -3778,7 +3798,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="false">
                 <boolProp name="LoopController.continue_forever">true</boolProp>
                 <stringProp name="LoopController.loops">4</stringProp>
               </LoopController>
@@ -3815,7 +3835,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="ref_id" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">33192</stringProp>
+                        <stringProp name="Argument.value">GetLastcreatedCategoryRefId_g1</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                         <boolProp name="HTTPArgument.use_equals">true</boolProp>
                         <stringProp name="Argument.name">ref_id</stringProp>
