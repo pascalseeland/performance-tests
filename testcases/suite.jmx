@@ -679,7 +679,7 @@ vars.put(&quot;my_custom_thread_counter&quot;, currentThread);
 vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
             </BeanShellPreProcessor>
             <hashTree/>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalDesktop" enabled="true"/>
             <hashTree>
               <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="PersonalSettings" enabled="true"/>
               <hashTree>
@@ -1846,7 +1846,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1957,7 +1957,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
             <hashTree>
-              <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="false">
+              <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
               </WhileController>
               <hashTree>
@@ -2525,7 +2525,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
