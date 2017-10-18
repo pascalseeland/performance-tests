@@ -2060,7 +2060,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
               <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
-                <stringProp name="IfController.condition">${THREADS} == 1</stringProp>
+                <stringProp name="IfController.condition">${THREADS} == 1 &amp;&amp; ${IS_ADMIN2} == true</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
               </IfController>
               <hashTree>
@@ -2120,7 +2120,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </HTTPSamplerProxy>
                 <hashTree>
                   <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCourseSessionFormAction" enabled="true">
-                    <stringProp name="HtmlExtractor.refname">ilGetCourseSessionFormAction</stringProp>
+                    <stringProp name="HtmlExtractor.refname">ilGetCourseSessionFormAction3</stringProp>
                     <stringProp name="HtmlExtractor.expr">#mainscrolldiv #il_center_col .il_VAccordionContainer:first-child .il_VAccordionContentDef .il_VAccordionContent #form_</stringProp>
                     <stringProp name="HtmlExtractor.attribute">action</stringProp>
                     <stringProp name="HtmlExtractor.default">#NV</stringProp>
@@ -2128,6 +2128,15 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
                     <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
                   </HtmlExtractor>
+                  <hashTree/>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetCourseSessionFormAction" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">ilGetCourseSessionFormAction</stringProp>
+                    <stringProp name="RegexExtractor.regex">action=&quot;(.+?new_type=sess.+?cmdClass=ilobjsessiongui.+?)&quot;</stringProp>
+                    <stringProp name="RegexExtractor.template"></stringProp>
+                    <stringProp name="RegexExtractor.default"></stringProp>
+                    <stringProp name="RegexExtractor.match_number"></stringProp>
+                  </RegexExtractor>
                   <hashTree/>
                   <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCourseHeaderImage" enabled="true">
                     <stringProp name="HtmlExtractor.refname">ilGetCourseHeaderImage</stringProp>
@@ -2157,7 +2166,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
-                    <stringProp name="Scope.variable">ilGetCourseSessionFormAction</stringProp>
+                    <stringProp name="Scope.variable">ilGetCourseSessionFormAction_g1</stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderImageValidate" enabled="true">
@@ -2279,7 +2288,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="HTTPSampler.port"></stringProp>
                   <stringProp name="HTTPSampler.protocol"></stringProp>
                   <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                  <stringProp name="HTTPSampler.path">${PATH}/${ilGetCourseSessionFormAction}</stringProp>
+                  <stringProp name="HTTPSampler.path">${PATH}/${__unescapeHtml(${ilGetCourseSessionFormAction_g1})}</stringProp>
                   <stringProp name="HTTPSampler.method">POST</stringProp>
                   <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
                   <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
