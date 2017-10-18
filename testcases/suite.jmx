@@ -2087,7 +2087,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <boolProp name="CounterConfig.per_user">false</boolProp>
                   </CounterConfig>
                   <hashTree/>
-                  <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="CalculateSessionVallue" enabled="true">
+                  <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="CalculateSessionValue" enabled="true">
                     <boolProp name="resetInterpreter">false</boolProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="filename"></stringProp>
@@ -2275,7 +2275,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
-                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course Sessions ${ilCourseCreationCounterForTestTitle}" enabled="true">
+                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Course Sessions ${ilCourseCreationCounterForTestTitle}" enabled="true">
                     <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                       <collectionProp name="Arguments.arguments">
                         <elementProp name="ref_id" elementType="HTTPArgument">
