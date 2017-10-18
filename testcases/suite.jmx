@@ -2066,7 +2066,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
               <hashTree/>
               <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
                 <boolProp name="LoopController.continue_forever">true</boolProp>
-                <stringProp name="LoopController.loops">1</stringProp>
+                <stringProp name="LoopController.loops">4</stringProp>
               </LoopController>
               <hashTree>
                 <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ilCourseCreationCounter" enabled="true">
@@ -2374,7 +2374,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course Sessions" enabled="false">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Course Sessions" enabled="true">
                   <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                     <collectionProp name="HTTPFileArgs.files">
                       <elementProp name="README.md" elementType="HTTPFileArg">
