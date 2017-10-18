@@ -2078,6 +2078,15 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <boolProp name="CounterConfig.per_user">false</boolProp>
                   </CounterConfig>
                   <hashTree/>
+                  <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ilCourseCreationCounterForTestTitle" enabled="true">
+                    <stringProp name="CounterConfig.start">1</stringProp>
+                    <stringProp name="CounterConfig.end"></stringProp>
+                    <stringProp name="CounterConfig.incr">1</stringProp>
+                    <stringProp name="CounterConfig.name">ilCourseCreationCounterForTestTitle</stringProp>
+                    <stringProp name="CounterConfig.format"></stringProp>
+                    <boolProp name="CounterConfig.per_user">false</boolProp>
+                  </CounterConfig>
+                  <hashTree/>
                   <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="CalculateSessionVallue" enabled="true">
                     <boolProp name="resetInterpreter">false</boolProp>
                     <stringProp name="parameters"></stringProp>
@@ -2087,7 +2096,7 @@ sessions = 10 * sessions;
 vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</stringProp>
                   </BeanShellPreProcessor>
                   <hashTree/>
-                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Course" enabled="true">
+                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Course ${ilCourseCreationCounterForTestTitle}" enabled="true">
                     <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                       <collectionProp name="Arguments.arguments">
                         <elementProp name="ref_id" elementType="HTTPArgument">
@@ -2266,7 +2275,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
-                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course Sessions" enabled="true">
+                  <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Course Sessions ${ilCourseCreationCounterForTestTitle}" enabled="true">
                     <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                       <collectionProp name="Arguments.arguments">
                         <elementProp name="ref_id" elementType="HTTPArgument">
