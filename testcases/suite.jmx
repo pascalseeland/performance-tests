@@ -2059,14 +2059,14 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   </hashTree>
                 </hashTree>
               </hashTree>
-              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If single threaded and admin" enabled="true">
                 <stringProp name="IfController.condition">${THREADS} == 1 &amp;&amp; ${IS_ADMIN2} == true</stringProp>
                 <boolProp name="IfController.evaluateAll">false</boolProp>
               </IfController>
               <hashTree>
                 <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
                   <boolProp name="LoopController.continue_forever">true</boolProp>
-                  <stringProp name="LoopController.loops">1</stringProp>
+                  <stringProp name="LoopController.loops">4</stringProp>
                 </LoopController>
                 <hashTree>
                   <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="ilCourseCreationCounter" enabled="true">
@@ -2262,7 +2262,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                       <boolProp name="Assertion.assume_success">false</boolProp>
                       <intProp name="Assertion.test_type">1</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
-                      <stringProp name="Scope.variable">ilGetNewCourseRefId</stringProp>
+                      <stringProp name="Scope.variable">ilGetNewCourseRefId_g1</stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
