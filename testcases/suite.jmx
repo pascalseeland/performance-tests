@@ -3337,7 +3337,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 <stringProp name="HTTPSampler.response_timeout"></stringProp>
               </HTTPSamplerProxy>
               <hashTree>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetNewThreadActionUrl" enabled="false">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetNewThreadActionUrl" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">ilGetNewThreadActionUrl</stringProp>
                   <stringProp name="RegexExtractor.regex">href=&quot;(.+?cmdClass=ilobjforumgui.+?cmd=createThread.+?)&quot;</stringProp>
@@ -3346,7 +3346,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="RegexExtractor.match_number"></stringProp>
                 </RegexExtractor>
                 <hashTree/>
-                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewThreadActionUrl" enabled="false">
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewThreadActionUrl" enabled="true">
                   <collectionProp name="Asserion.test_strings">
                     <stringProp name="36139">#NV</stringProp>
                   </collectionProp>
@@ -3377,7 +3377,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 <stringProp name="HTTPSampler.response_timeout"></stringProp>
               </HTTPSamplerProxy>
               <hashTree>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetNewThreadFormAction" enabled="false">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetNewThreadFormAction" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">ilGetNewThreadFormAction</stringProp>
                   <stringProp name="RegexExtractor.regex">action=&quot;(.+?cmdClass=ilobjforumgui.+?cmd=post.+?)&quot;</stringProp>
@@ -3386,7 +3386,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="RegexExtractor.match_number"></stringProp>
                 </RegexExtractor>
                 <hashTree/>
-                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewThreadFormAction" enabled="false">
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewThreadFormAction" enabled="true">
                   <collectionProp name="Asserion.test_strings">
                     <stringProp name="36139">#NV</stringProp>
                   </collectionProp>
@@ -3397,7 +3397,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="Scope.variable">ilGetNewThreadFormAction_g1</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
-                <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetThreadFilehashValidate" enabled="false">
+                <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetThreadFilehashValidate" enabled="true">
                   <stringProp name="HtmlExtractor.refname">ilGetThreadFilehashValidate</stringProp>
                   <stringProp name="HtmlExtractor.expr">#ilfilehash</stringProp>
                   <stringProp name="HtmlExtractor.attribute">value</stringProp>
@@ -3407,7 +3407,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
                 </HtmlExtractor>
                 <hashTree/>
-                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetThreadFilehashValidate" enabled="false">
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetThreadFilehashValidate" enabled="true">
                   <collectionProp name="Asserion.test_strings">
                     <stringProp name="36139">#NV</stringProp>
                   </collectionProp>
@@ -4164,26 +4164,25 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                   <stringProp name="HTTPSampler.response_timeout"></stringProp>
                 </HTTPSamplerProxy>
                 <hashTree>
-                  <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCategoryRemoveSuccess" enabled="true">
-                    <stringProp name="HtmlExtractor.refname">ilGetCategoryRemoveSuccess</stringProp>
-                    <stringProp name="HtmlExtractor.expr">.alert.alert-success</stringProp>
-                    <stringProp name="HtmlExtractor.attribute">class</stringProp>
-                    <stringProp name="HtmlExtractor.default">#NV</stringProp>
-                    <stringProp name="HtmlExtractor.match_number"></stringProp>
-                    <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
-                    <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
-                  </HtmlExtractor>
+                  <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="GetCategoryRemoveSuccess" enabled="true">
+                    <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                    <stringProp name="RegexExtractor.refname">ilGetCategoryRemoveSuccess</stringProp>
+                    <stringProp name="RegexExtractor.regex">href=&quot;(.+?item_ref_id=${ilGetFirstCreatedCategoryRefId}.+?cmd=delete.+?)&quot;</stringProp>
+                    <stringProp name="RegexExtractor.template"></stringProp>
+                    <stringProp name="RegexExtractor.default">#NV</stringProp>
+                    <stringProp name="RegexExtractor.match_number"></stringProp>
+                    <stringProp name="Sample.scope">all</stringProp>
+                  </RegexExtractor>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCategoryRemoveSuccess" enabled="true">
                     <collectionProp name="Asserion.test_strings">
-                      <stringProp name="1007402190">alert alert-success</stringProp>
+                      <stringProp name="36139">#NV</stringProp>
                     </collectionProp>
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
-                    <intProp name="Assertion.test_type">8</intProp>
+                    <intProp name="Assertion.test_type">40</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCategoryRemoveSuccess</stringProp>
-                    <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
