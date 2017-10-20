@@ -958,7 +958,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <hashTree/>
                 </hashTree>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Selected Items" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Selected Items" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1015,7 +1015,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Mail" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Mail" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments"/>
                 </elementProp>
@@ -1057,7 +1057,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Memberships" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Memberships" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1136,7 +1136,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET News" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET News" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1272,7 +1272,16 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       <stringProp name="HTTPSampler.response_timeout"></stringProp>
                     </HTTPSamplerProxy>
                     <hashTree>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarDayCommandNode" enabled="true">
+                        <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                        <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
+                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
+                        <stringProp name="RegexExtractor.template"></stringProp>
+                        <stringProp name="RegexExtractor.default"></stringProp>
+                        <stringProp name="RegexExtractor.match_number"></stringProp>
+                      </RegexExtractor>
+                      <hashTree/>
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarWeekCommandNode" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                         <stringProp name="RegexExtractor.refname">ilGetCalendarWeekCommandNode</stringProp>
                         <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarweekgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
@@ -1281,7 +1290,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
                       </RegexExtractor>
                       <hashTree/>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarMonthCommandNode" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                         <stringProp name="RegexExtractor.refname">ilGetCalendarMonthCommandNode</stringProp>
                         <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarmonthgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
@@ -1290,10 +1299,10 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
                       </RegexExtractor>
                       <hashTree/>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarListCommandNode" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                        <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
-                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
+                        <stringProp name="RegexExtractor.refname">ilExtractCalendarListCommandNode</stringProp>
+                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarinboxgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
                         <stringProp name="RegexExtractor.template"></stringProp>
                         <stringProp name="RegexExtractor.default"></stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
@@ -1335,8 +1344,20 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
+                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ExtractCalendarListCommandNode" enabled="true">
+                        <collectionProp name="Asserion.test_strings">
+                          <stringProp name="36139">#NV</stringProp>
+                        </collectionProp>
+                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                        <boolProp name="Assertion.assume_success">false</boolProp>
+                        <intProp name="Assertion.test_type">12</intProp>
+                        <stringProp name="Assertion.scope">variable</stringProp>
+                        <stringProp name="Scope.variable">ilExtractCalendarListCommandNode</stringProp>
+                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      </ResponseAssertion>
+                      <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1407,7 +1428,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Day ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Day ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmd" elementType="HTTPArgument">
@@ -1485,7 +1506,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1556,7 +1577,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Week ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Week ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmd" elementType="HTTPArgument">
@@ -1682,6 +1703,26 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       <stringProp name="HTTPSampler.response_timeout"></stringProp>
                     </HTTPSamplerProxy>
                     <hashTree>
+                      <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+                        <boolProp name="resetInterpreter">false</boolProp>
+                        <stringProp name="parameters"></stringProp>
+                        <stringProp name="filename"></stringProp>
+                        <stringProp name="script">import java.text.SimpleDateFormat; 
+import java.util.Date; 
+
+   date_s = &quot;${calendar_date}&quot;; 
+   SimpleDateFormat dt = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
+   Date date = dt.parse(date_s); 
+   date.setMonth( date.getMonth() + 1 );
+   SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
+   String formattedDate = df.format(date); 
+   vars.put(&quot;ilCalenadarFutureMonth&quot;,formattedDate);
+   date.setMonth( date.getMonth() - 2 );
+   SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
+   String formattedDate = df.format(date);
+   vars.put(&quot;ilCalenadarPastMonth&quot;,formattedDate);</stringProp>
+                      </BeanShellPreProcessor>
+                      <hashTree/>
                       <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
                         <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
                         <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
@@ -1705,7 +1746,149 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Month ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month ${ilCalenadarPastMonth} (Navigate Left)" enabled="true">
+                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                        <collectionProp name="Arguments.arguments">
+                          <elementProp name="cmdClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilcalendarmonthgui</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdClass</stringProp>
+                          </elementProp>
+                          <elementProp name="baseClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">baseClass</stringProp>
+                          </elementProp>
+                          <elementProp name="seed" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilCalenadarPastMonth}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">seed</stringProp>
+                          </elementProp>
+                          <elementProp name="cmdNode" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilGetCalendarMonthCommandNode_g1}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdNode</stringProp>
+                          </elementProp>
+                        </collectionProp>
+                      </elementProp>
+                      <stringProp name="HTTPSampler.domain"></stringProp>
+                      <stringProp name="HTTPSampler.port"></stringProp>
+                      <stringProp name="HTTPSampler.protocol"></stringProp>
+                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
+                      <stringProp name="HTTPSampler.method">GET</stringProp>
+                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                    </HTTPSamplerProxy>
+                    <hashTree>
+                      <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
+                        <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
+                        <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
+                        <stringProp name="HtmlExtractor.attribute">class</stringProp>
+                        <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                        <stringProp name="HtmlExtractor.match_number"></stringProp>
+                        <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                        <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+                      </HtmlExtractor>
+                      <hashTree/>
+                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarMonthClass" enabled="true">
+                        <collectionProp name="Asserion.test_strings">
+                          <stringProp name="1660144194">calstd il-cal-month</stringProp>
+                        </collectionProp>
+                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                        <boolProp name="Assertion.assume_success">false</boolProp>
+                        <intProp name="Assertion.test_type">16</intProp>
+                        <stringProp name="Assertion.scope">variable</stringProp>
+                        <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
+                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      </ResponseAssertion>
+                      <hashTree/>
+                    </hashTree>
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month ${ilCalenadarFutureMonth} (Navigate Right)" enabled="true">
+                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                        <collectionProp name="Arguments.arguments">
+                          <elementProp name="cmdClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilcalendarmonthgui</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdClass</stringProp>
+                          </elementProp>
+                          <elementProp name="baseClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">baseClass</stringProp>
+                          </elementProp>
+                          <elementProp name="seed" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilCalenadarPastMonth}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">seed</stringProp>
+                          </elementProp>
+                          <elementProp name="cmdNode" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilGetCalendarMonthCommandNode_g1}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdNode</stringProp>
+                          </elementProp>
+                        </collectionProp>
+                      </elementProp>
+                      <stringProp name="HTTPSampler.domain"></stringProp>
+                      <stringProp name="HTTPSampler.port"></stringProp>
+                      <stringProp name="HTTPSampler.protocol"></stringProp>
+                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
+                      <stringProp name="HTTPSampler.method">GET</stringProp>
+                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                    </HTTPSamplerProxy>
+                    <hashTree>
+                      <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
+                        <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
+                        <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
+                        <stringProp name="HtmlExtractor.attribute">class</stringProp>
+                        <stringProp name="HtmlExtractor.default">#NV</stringProp>
+                        <stringProp name="HtmlExtractor.match_number"></stringProp>
+                        <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
+                        <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
+                      </HtmlExtractor>
+                      <hashTree/>
+                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarMonthClass" enabled="true">
+                        <collectionProp name="Asserion.test_strings">
+                          <stringProp name="1660144194">calstd il-cal-month</stringProp>
+                        </collectionProp>
+                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                        <boolProp name="Assertion.assume_success">false</boolProp>
+                        <intProp name="Assertion.test_type">16</intProp>
+                        <stringProp name="Assertion.scope">variable</stringProp>
+                        <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
+                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      </ResponseAssertion>
+                      <hashTree/>
+                    </hashTree>
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Month ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1783,7 +1966,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view ${calendar_date}" enabled="true">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view ${calendar_date}" enabled="false">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="target" elementType="HTTPArgument">
@@ -1861,11 +2044,164 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar List ${calendar_date}" enabled="false">
+                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                        <collectionProp name="Arguments.arguments">
+                          <elementProp name="cmdClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilcalendardaygui</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdClass</stringProp>
+                          </elementProp>
+                          <elementProp name="baseClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">baseClass</stringProp>
+                          </elementProp>
+                          <elementProp name="seed" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${calendar_date}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">seed</stringProp>
+                          </elementProp>
+                          <elementProp name="cmdNode" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilExtractCalendarListCommandNode_g1}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdNode</stringProp>
+                          </elementProp>
+                        </collectionProp>
+                      </elementProp>
+                      <stringProp name="HTTPSampler.domain"></stringProp>
+                      <stringProp name="HTTPSampler.port"></stringProp>
+                      <stringProp name="HTTPSampler.protocol"></stringProp>
+                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
+                      <stringProp name="HTTPSampler.method">GET</stringProp>
+                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                    </HTTPSamplerProxy>
+                    <hashTree>
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetCalendarListUrl" enabled="true">
+                        <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+                        <stringProp name="RegexExtractor.refname">ilGetCalendarListUrl</stringProp>
+                        <stringProp name="RegexExtractor.regex">.+?ilcalendarinboxgui.+?</stringProp>
+                        <stringProp name="RegexExtractor.template"></stringProp>
+                        <stringProp name="RegexExtractor.default"></stringProp>
+                        <stringProp name="RegexExtractor.match_number"></stringProp>
+                      </RegexExtractor>
+                      <hashTree/>
+                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarListUrl" enabled="true">
+                        <collectionProp name="Asserion.test_strings">
+                          <stringProp name="0"></stringProp>
+                        </collectionProp>
+                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                        <boolProp name="Assertion.assume_success">false</boolProp>
+                        <intProp name="Assertion.test_type">12</intProp>
+                        <stringProp name="Assertion.scope">variable</stringProp>
+                        <stringProp name="Scope.variable">ilGetCalendarListUrl</stringProp>
+                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      </ResponseAssertion>
+                      <hashTree/>
+                    </hashTree>
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar List ${calendar_date}" enabled="false">
+                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                        <collectionProp name="Arguments.arguments">
+                          <elementProp name="cmdClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilcalendarinboxgui</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdClass</stringProp>
+                          </elementProp>
+                          <elementProp name="cmd" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">downloadFiles</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmd</stringProp>
+                          </elementProp>
+                          <elementProp name="baseClass" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">baseClass</stringProp>
+                          </elementProp>
+                          <elementProp name="seed" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${calendar_date}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">seed</stringProp>
+                          </elementProp>
+                          <elementProp name="cmdNode" elementType="HTTPArgument">
+                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                            <stringProp name="Argument.value">${ilExtractCalendarListCommandNode_g1}</stringProp>
+                            <stringProp name="Argument.metadata">=</stringProp>
+                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                            <stringProp name="Argument.name">cmdNode</stringProp>
+                          </elementProp>
+                        </collectionProp>
+                      </elementProp>
+                      <stringProp name="HTTPSampler.domain"></stringProp>
+                      <stringProp name="HTTPSampler.port"></stringProp>
+                      <stringProp name="HTTPSampler.protocol"></stringProp>
+                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
+                      <stringProp name="HTTPSampler.method">GET</stringProp>
+                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                    </HTTPSamplerProxy>
+                    <hashTree>
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetCalendarListUrl" enabled="true">
+                        <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+                        <stringProp name="RegexExtractor.refname">ilGetCalendarListUrl</stringProp>
+                        <stringProp name="RegexExtractor.regex">.+?ilcalendarinboxgui.+?</stringProp>
+                        <stringProp name="RegexExtractor.template"></stringProp>
+                        <stringProp name="RegexExtractor.default"></stringProp>
+                        <stringProp name="RegexExtractor.match_number"></stringProp>
+                      </RegexExtractor>
+                      <hashTree/>
+                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarListUrl" enabled="true">
+                        <collectionProp name="Asserion.test_strings">
+                          <stringProp name="0"></stringProp>
+                        </collectionProp>
+                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                        <boolProp name="Assertion.assume_success">false</boolProp>
+                        <intProp name="Assertion.test_type">12</intProp>
+                        <stringProp name="Assertion.scope">variable</stringProp>
+                        <stringProp name="Scope.variable">ilGetCalendarListUrl</stringProp>
+                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      </ResponseAssertion>
+                      <hashTree/>
+                    </hashTree>
                   </hashTree>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
+            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
+              <boolProp name="displayJMeterProperties">false</boolProp>
+              <boolProp name="displayJMeterVariables">true</boolProp>
+              <boolProp name="displaySystemProperties">false</boolProp>
+            </DebugSampler>
+            <hashTree/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -1974,7 +2310,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="false"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -2079,7 +2415,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -3156,7 +3492,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   </hashTree>
                 </hashTree>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Forum Get Formaction" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Forum Get Formaction" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="ref_id" elementType="HTTPArgument">
@@ -3223,7 +3559,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -3328,7 +3664,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post Action Url" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post Action Url" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="target" elementType="HTTPArgument">
@@ -3383,7 +3719,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post From Url Get Formaction" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post From Url Get Formaction" enabled="false">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments"/>
                 </elementProp>
@@ -3444,7 +3780,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum with Post" enabled="true">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum with Post" enabled="false">
                 <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                   <collectionProp name="HTTPFileArgs.files">
                     <elementProp name="README.md" elementType="HTTPFileArg">
@@ -3571,7 +3907,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="false">
                 <boolProp name="LoopController.continue_forever">true</boolProp>
                 <stringProp name="LoopController.loops">4</stringProp>
               </LoopController>
@@ -4350,13 +4686,13 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                   <hashTree/>
                 </hashTree>
               </hashTree>
-              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="false">
                 <boolProp name="displayJMeterProperties">false</boolProp>
                 <boolProp name="displayJMeterVariables">true</boolProp>
                 <boolProp name="displaySystemProperties">false</boolProp>
               </DebugSampler>
               <hashTree/>
-              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete First Created Category" enabled="true"/>
+              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete First Created Category" enabled="false"/>
               <hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET DeleteCategoryAction" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -4994,12 +5330,6 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
       <boolProp name="WorkBench.save">true</boolProp>
     </WorkBench>
     <hashTree>
-      <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
-        <boolProp name="displayJMeterProperties">false</boolProp>
-        <boolProp name="displayJMeterVariables">true</boolProp>
-        <boolProp name="displaySystemProperties">false</boolProp>
-      </DebugSampler>
-      <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="DEBUG: Inspect Results" enabled="true">
         <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
