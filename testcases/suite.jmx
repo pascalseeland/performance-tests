@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="ILIAS Performance Testsuite" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -126,7 +126,7 @@
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">${LOOPS}</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time"></stringProp>
@@ -153,6 +153,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">PROTOCOL</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="HOST" enabled="true">
@@ -165,6 +166,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">HOST</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PATH" enabled="true">
@@ -177,6 +179,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">PATH</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PORT" enabled="true">
@@ -189,6 +192,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">PORT</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="CLIENT_ID" enabled="true">
@@ -201,6 +205,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">CLIENT_ID</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="THREADS" enabled="true">
@@ -213,6 +218,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">THREADS</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="RAMP_UP" enabled="true">
@@ -225,6 +231,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">RAMP_UP</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="LOOPS" enabled="true">
@@ -236,6 +243,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">LOOPS</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="WORK_DIR" enabled="true">
@@ -248,6 +256,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">WORK_DIR</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="IS_ADMIN" enabled="true">
@@ -259,6 +268,7 @@
             <intProp name="Assertion.test_type">1</intProp>
             <stringProp name="Assertion.scope">variable</stringProp>
             <stringProp name="Scope.variable">IS_ADMIN</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
@@ -283,6 +293,7 @@
               <intProp name="Assertion.test_type">1</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">USERNAME</stringProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
             </ResponseAssertion>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="PASSWORD" enabled="true">
@@ -295,6 +306,7 @@
               <intProp name="Assertion.test_type">1</intProp>
               <stringProp name="Assertion.scope">variable</stringProp>
               <stringProp name="Scope.variable">PASSWORD</stringProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
@@ -375,7 +387,7 @@
             </hashTree>
             <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="InsideLoopingCounter" enabled="true">
               <stringProp name="CounterConfig.start">0</stringProp>
-              <stringProp name="CounterConfig.end"></stringProp>
+              <stringProp name="CounterConfig.end">5</stringProp>
               <stringProp name="CounterConfig.incr">1</stringProp>
               <stringProp name="CounterConfig.name">InsideLoopingCounter</stringProp>
               <stringProp name="CounterConfig.format"></stringProp>
@@ -535,6 +547,7 @@
                 <intProp name="Assertion.test_type">12</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLoginAction</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLoginUsername" enabled="true">
@@ -547,6 +560,7 @@
                 <intProp name="Assertion.test_type">12</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLoginUsername</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLoginPassword" enabled="true">
@@ -559,6 +573,7 @@
                 <intProp name="Assertion.test_type">12</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLoginPassword</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLoginSubmit" enabled="true">
@@ -571,6 +586,7 @@
                 <intProp name="Assertion.test_type">12</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLoginSubmit</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLoginSubmitV" enabled="true">
@@ -583,6 +599,7 @@
                 <intProp name="Assertion.test_type">12</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLoginSubmitV</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
@@ -650,6 +667,7 @@
                 <intProp name="Assertion.test_type">8</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilPostLoginAction</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
@@ -756,6 +774,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetPersonalProfileFormUrl</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -883,6 +902,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetSuccessAfterSaving</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -954,11 +974,12 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetErrorAfterSaving</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Selected Items" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Selected Items" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1012,10 +1033,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetSelectedItemsBlHead</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Mail" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Mail" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments"/>
                 </elementProp>
@@ -1054,10 +1076,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetMailHeaderImage</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Memberships" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Memberships" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -1121,6 +1144,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetMembershipsHead</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetMembershipsNewsHead" enabled="true">
@@ -1133,6 +1157,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetMembershipsNewsHead</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
@@ -1200,6 +1225,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetMembershipsHead</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetMembershipsNewsForm" enabled="true">
@@ -1212,6 +1238,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetMembershipsNewsForm</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
@@ -1272,16 +1299,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       <stringProp name="HTTPSampler.response_timeout"></stringProp>
                     </HTTPSamplerProxy>
                     <hashTree>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarDayCommandNode" enabled="true">
-                        <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                        <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
-                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
-                        <stringProp name="RegexExtractor.template"></stringProp>
-                        <stringProp name="RegexExtractor.default"></stringProp>
-                        <stringProp name="RegexExtractor.match_number"></stringProp>
-                      </RegexExtractor>
-                      <hashTree/>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarWeekCommandNode" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                         <stringProp name="RegexExtractor.refname">ilGetCalendarWeekCommandNode</stringProp>
                         <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarweekgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
@@ -1290,7 +1308,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
                       </RegexExtractor>
                       <hashTree/>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarMonthCommandNode" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                         <stringProp name="RegexExtractor.refname">ilGetCalendarMonthCommandNode</stringProp>
                         <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarmonthgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
@@ -1299,10 +1317,10 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
                       </RegexExtractor>
                       <hashTree/>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ExtractCalendarListCommandNode" enabled="true">
+                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                         <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                        <stringProp name="RegexExtractor.refname">ilExtractCalendarListCommandNode</stringProp>
-                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendarinboxgui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
+                        <stringProp name="RegexExtractor.refname">ilGetCalendarDayCommandNode</stringProp>
+                        <stringProp name="RegexExtractor.regex">cmdClass=ilcalendardaygui.+?cmdNode=(.+?)&amp;.*?&quot;&gt;</stringProp>
                         <stringProp name="RegexExtractor.template"></stringProp>
                         <stringProp name="RegexExtractor.default"></stringProp>
                         <stringProp name="RegexExtractor.match_number"></stringProp>
@@ -1318,6 +1336,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarDayCommandNode</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                       <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ExtractCalendarWeekCommandNode" enabled="true">
@@ -1330,6 +1349,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ExtractCalendarWeekCommandNode</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                       <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ExtractCalendarMonthCommandNode" enabled="true">
@@ -1342,22 +1362,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ExtractCalendarMonthCommandNode</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
-                      </ResponseAssertion>
-                      <hashTree/>
-                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ExtractCalendarListCommandNode" enabled="true">
-                        <collectionProp name="Asserion.test_strings">
-                          <stringProp name="36139">#NV</stringProp>
-                        </collectionProp>
-                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                        <boolProp name="Assertion.assume_success">false</boolProp>
-                        <intProp name="Assertion.test_type">12</intProp>
-                        <stringProp name="Assertion.scope">variable</stringProp>
-                        <stringProp name="Scope.variable">ilExtractCalendarListCommandNode</stringProp>
-                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Day ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1425,10 +1434,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarDayClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Day ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Day ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmd" elementType="HTTPArgument">
@@ -1503,10 +1513,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarDayClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Week ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1574,10 +1585,11 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarWeekClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Week ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Week ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmd" elementType="HTTPArgument">
@@ -1652,6 +1664,7 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarWeekClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
@@ -1703,26 +1716,6 @@ vars.put(&quot;my_custom_looping_counter&quot;, currentUserLoop);</stringProp>
                       <stringProp name="HTTPSampler.response_timeout"></stringProp>
                     </HTTPSamplerProxy>
                     <hashTree>
-                      <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
-                        <boolProp name="resetInterpreter">false</boolProp>
-                        <stringProp name="parameters"></stringProp>
-                        <stringProp name="filename"></stringProp>
-                        <stringProp name="script">import java.text.SimpleDateFormat; 
-import java.util.Date; 
-
-   date_s = &quot;${calendar_date}&quot;; 
-   SimpleDateFormat dt = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
-   Date date = dt.parse(date_s); 
-   date.setMonth( date.getMonth() + 1 );
-   SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
-   String formattedDate = df.format(date); 
-   vars.put(&quot;ilCalenadarFutureMonth&quot;,formattedDate);
-   date.setMonth( date.getMonth() - 2 );
-   SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); 
-   String formattedDate = df.format(date);
-   vars.put(&quot;ilCalenadarPastMonth&quot;,formattedDate);</stringProp>
-                      </BeanShellPreProcessor>
-                      <hashTree/>
                       <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
                         <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
                         <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
@@ -1743,152 +1736,11 @@ import java.util.Date;
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month ${ilCalenadarPastMonth} (Navigate Left)" enabled="true">
-                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                        <collectionProp name="Arguments.arguments">
-                          <elementProp name="cmdClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilcalendarmonthgui</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdClass</stringProp>
-                          </elementProp>
-                          <elementProp name="baseClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">baseClass</stringProp>
-                          </elementProp>
-                          <elementProp name="seed" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilCalenadarPastMonth}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">seed</stringProp>
-                          </elementProp>
-                          <elementProp name="cmdNode" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilGetCalendarMonthCommandNode_g1}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdNode</stringProp>
-                          </elementProp>
-                        </collectionProp>
-                      </elementProp>
-                      <stringProp name="HTTPSampler.domain"></stringProp>
-                      <stringProp name="HTTPSampler.port"></stringProp>
-                      <stringProp name="HTTPSampler.protocol"></stringProp>
-                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
-                      <stringProp name="HTTPSampler.method">GET</stringProp>
-                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                    </HTTPSamplerProxy>
-                    <hashTree>
-                      <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
-                        <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
-                        <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
-                        <stringProp name="HtmlExtractor.attribute">class</stringProp>
-                        <stringProp name="HtmlExtractor.default">#NV</stringProp>
-                        <stringProp name="HtmlExtractor.match_number"></stringProp>
-                        <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
-                        <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
-                      </HtmlExtractor>
-                      <hashTree/>
-                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarMonthClass" enabled="true">
-                        <collectionProp name="Asserion.test_strings">
-                          <stringProp name="1660144194">calstd il-cal-month</stringProp>
-                        </collectionProp>
-                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                        <boolProp name="Assertion.assume_success">false</boolProp>
-                        <intProp name="Assertion.test_type">16</intProp>
-                        <stringProp name="Assertion.scope">variable</stringProp>
-                        <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
-                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
-                      </ResponseAssertion>
-                      <hashTree/>
-                    </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar Month ${ilCalenadarFutureMonth} (Navigate Right)" enabled="true">
-                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                        <collectionProp name="Arguments.arguments">
-                          <elementProp name="cmdClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilcalendarmonthgui</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdClass</stringProp>
-                          </elementProp>
-                          <elementProp name="baseClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">baseClass</stringProp>
-                          </elementProp>
-                          <elementProp name="seed" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilCalenadarPastMonth}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">seed</stringProp>
-                          </elementProp>
-                          <elementProp name="cmdNode" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilGetCalendarMonthCommandNode_g1}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdNode</stringProp>
-                          </elementProp>
-                        </collectionProp>
-                      </elementProp>
-                      <stringProp name="HTTPSampler.domain"></stringProp>
-                      <stringProp name="HTTPSampler.port"></stringProp>
-                      <stringProp name="HTTPSampler.protocol"></stringProp>
-                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
-                      <stringProp name="HTTPSampler.method">GET</stringProp>
-                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                    </HTTPSamplerProxy>
-                    <hashTree>
-                      <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetCalendarMonthClass" enabled="true">
-                        <stringProp name="HtmlExtractor.refname">ilGetCalendarMonthClass</stringProp>
-                        <stringProp name="HtmlExtractor.expr">table.calstd.il-cal-month</stringProp>
-                        <stringProp name="HtmlExtractor.attribute">class</stringProp>
-                        <stringProp name="HtmlExtractor.default">#NV</stringProp>
-                        <stringProp name="HtmlExtractor.match_number"></stringProp>
-                        <stringProp name="HtmlExtractor.extractor_impl"></stringProp>
-                        <boolProp name="HtmlExtractor.default_empty_value">false</boolProp>
-                      </HtmlExtractor>
-                      <hashTree/>
-                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarMonthClass" enabled="true">
-                        <collectionProp name="Asserion.test_strings">
-                          <stringProp name="1660144194">calstd il-cal-month</stringProp>
-                        </collectionProp>
-                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                        <boolProp name="Assertion.assume_success">false</boolProp>
-                        <intProp name="Assertion.test_type">16</intProp>
-                        <stringProp name="Assertion.scope">variable</stringProp>
-                        <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
-                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
-                      </ResponseAssertion>
-                      <hashTree/>
-                    </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar Month ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Download Calendar Month ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="cmdClass" elementType="HTTPArgument">
@@ -1963,10 +1815,11 @@ import java.util.Date;
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCalendarMonthClass</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view ${calendar_date}" enabled="false">
+                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Session view ${calendar_date}" enabled="true">
                       <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                         <collectionProp name="Arguments.arguments">
                           <elementProp name="target" elementType="HTTPArgument">
@@ -2030,6 +1883,7 @@ import java.util.Date;
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetViewSessionHeaderImage</stringProp>
                         <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                       <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetSessionViewHeaderContent" enabled="true">
@@ -2041,153 +1895,7 @@ import java.util.Date;
                         <intProp name="Assertion.test_type">16</intProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetSessionViewHeaderContent</stringProp>
-                      </ResponseAssertion>
-                      <hashTree/>
-                    </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Calendar List ${calendar_date}" enabled="false">
-                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                        <collectionProp name="Arguments.arguments">
-                          <elementProp name="cmdClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilcalendardaygui</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdClass</stringProp>
-                          </elementProp>
-                          <elementProp name="baseClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">baseClass</stringProp>
-                          </elementProp>
-                          <elementProp name="seed" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${calendar_date}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">seed</stringProp>
-                          </elementProp>
-                          <elementProp name="cmdNode" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilExtractCalendarListCommandNode_g1}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdNode</stringProp>
-                          </elementProp>
-                        </collectionProp>
-                      </elementProp>
-                      <stringProp name="HTTPSampler.domain"></stringProp>
-                      <stringProp name="HTTPSampler.port"></stringProp>
-                      <stringProp name="HTTPSampler.protocol"></stringProp>
-                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
-                      <stringProp name="HTTPSampler.method">GET</stringProp>
-                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                    </HTTPSamplerProxy>
-                    <hashTree>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetCalendarListUrl" enabled="true">
-                        <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
-                        <stringProp name="RegexExtractor.refname">ilGetCalendarListUrl</stringProp>
-                        <stringProp name="RegexExtractor.regex">.+?ilcalendarinboxgui.+?</stringProp>
-                        <stringProp name="RegexExtractor.template"></stringProp>
-                        <stringProp name="RegexExtractor.default"></stringProp>
-                        <stringProp name="RegexExtractor.match_number"></stringProp>
-                      </RegexExtractor>
-                      <hashTree/>
-                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarListUrl" enabled="true">
-                        <collectionProp name="Asserion.test_strings">
-                          <stringProp name="0"></stringProp>
-                        </collectionProp>
-                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                        <boolProp name="Assertion.assume_success">false</boolProp>
-                        <intProp name="Assertion.test_type">12</intProp>
-                        <stringProp name="Assertion.scope">variable</stringProp>
-                        <stringProp name="Scope.variable">ilGetCalendarListUrl</stringProp>
-                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
-                      </ResponseAssertion>
-                      <hashTree/>
-                    </hashTree>
-                    <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Trigger Download Calendar List ${calendar_date}" enabled="false">
-                      <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-                        <collectionProp name="Arguments.arguments">
-                          <elementProp name="cmdClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilcalendarinboxgui</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdClass</stringProp>
-                          </elementProp>
-                          <elementProp name="cmd" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">downloadFiles</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmd</stringProp>
-                          </elementProp>
-                          <elementProp name="baseClass" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">ilPersonalDesktopGUI</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">baseClass</stringProp>
-                          </elementProp>
-                          <elementProp name="seed" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${calendar_date}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">seed</stringProp>
-                          </elementProp>
-                          <elementProp name="cmdNode" elementType="HTTPArgument">
-                            <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                            <stringProp name="Argument.value">${ilExtractCalendarListCommandNode_g1}</stringProp>
-                            <stringProp name="Argument.metadata">=</stringProp>
-                            <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                            <stringProp name="Argument.name">cmdNode</stringProp>
-                          </elementProp>
-                        </collectionProp>
-                      </elementProp>
-                      <stringProp name="HTTPSampler.domain"></stringProp>
-                      <stringProp name="HTTPSampler.port"></stringProp>
-                      <stringProp name="HTTPSampler.protocol"></stringProp>
-                      <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-                      <stringProp name="HTTPSampler.path">${PATH}/ilias.php</stringProp>
-                      <stringProp name="HTTPSampler.method">GET</stringProp>
-                      <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-                      <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-                      <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-                      <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                      <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-                      <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-                      <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                    </HTTPSamplerProxy>
-                    <hashTree>
-                      <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ilGetCalendarListUrl" enabled="true">
-                        <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
-                        <stringProp name="RegexExtractor.refname">ilGetCalendarListUrl</stringProp>
-                        <stringProp name="RegexExtractor.regex">.+?ilcalendarinboxgui.+?</stringProp>
-                        <stringProp name="RegexExtractor.template"></stringProp>
-                        <stringProp name="RegexExtractor.default"></stringProp>
-                        <stringProp name="RegexExtractor.match_number"></stringProp>
-                      </RegexExtractor>
-                      <hashTree/>
-                      <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCalendarListUrl" enabled="true">
-                        <collectionProp name="Asserion.test_strings">
-                          <stringProp name="0"></stringProp>
-                        </collectionProp>
-                        <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                        <boolProp name="Assertion.assume_success">false</boolProp>
-                        <intProp name="Assertion.test_type">12</intProp>
-                        <stringProp name="Assertion.scope">variable</stringProp>
-                        <stringProp name="Scope.variable">ilGetCalendarListUrl</stringProp>
-                        <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
@@ -2195,13 +1903,7 @@ import java.util.Date;
                 </hashTree>
               </hashTree>
             </hashTree>
-            <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
-              <boolProp name="displayJMeterProperties">false</boolProp>
-              <boolProp name="displayJMeterVariables">true</boolProp>
-              <boolProp name="displaySystemProperties">false</boolProp>
-            </DebugSampler>
-            <hashTree/>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Repository" enabled="true"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Repository" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -2272,6 +1974,7 @@ import java.util.Date;
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetRepositoryHeaderImage</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryBreadcrumbContent" enabled="true">
@@ -2284,6 +1987,7 @@ import java.util.Date;
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetRepositoryBreadcrumbContent</stringProp>
                   <stringProp name="TestPlan.comments">sanity check, that we picked the right breadcrumb (must match the header)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryBreadcrumbUrl" enabled="true">
@@ -2295,6 +1999,7 @@ import java.util.Date;
                   <intProp name="Assertion.test_type">6</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetRepositoryBreadcrumbUrl</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryHeaderContent" enabled="true">
@@ -2306,11 +2011,12 @@ import java.util.Date;
                   <intProp name="Assertion.test_type">1</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetRepositoryHeaderContent</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Courses" enabled="true"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${courses_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -2398,6 +2104,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetCourseHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderContent" enabled="true">
@@ -2409,13 +2116,14 @@ import java.util.Date;
                       <intProp name="Assertion.test_type">1</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetCourseHeaderContent</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
                 </hashTree>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="false"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Forum" enabled="true"/>
             <hashTree>
               <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
                 <stringProp name="WhileController.condition">${__javaScript(&quot;${forum_ref_id}&quot; != &quot;###STOP###&quot;)}</stringProp>
@@ -2503,6 +2211,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumThreadsHeaderContent" enabled="true">
@@ -2514,6 +2223,7 @@ import java.util.Date;
                       <intProp name="Assertion.test_type">16</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumHeaderContent</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -2610,6 +2320,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumHeaderContent" enabled="true">
@@ -2621,6 +2332,7 @@ import java.util.Date;
                       <intProp name="Assertion.test_type">8</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumHeaderContent</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumURL" enabled="true">
@@ -2633,6 +2345,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumURL</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumCmdNode" enabled="true">
@@ -2645,6 +2358,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumCmdNode</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -2719,6 +2433,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumPostsOrderByPostHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumPostsOrderByPostContent" enabled="true">
@@ -2730,6 +2445,7 @@ import java.util.Date;
                       <intProp name="Assertion.test_type">16</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumPostsOrderByPostHeaderContent</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -2804,6 +2520,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumPostsOrderByDateHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetForumPostsOrderByDateContent" enabled="true">
@@ -2815,6 +2532,7 @@ import java.util.Date;
                       <intProp name="Assertion.test_type">8</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumPostsOrderByDateHeaderContent</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -2907,6 +2625,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumCmdNode</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
@@ -3010,6 +2729,7 @@ import java.util.Date;
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetForumCmdNode</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
@@ -3117,6 +2837,7 @@ import java.util.Date;
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryBreadcrumbUrl" enabled="true">
@@ -3128,6 +2849,7 @@ import java.util.Date;
                     <intProp name="Assertion.test_type">6</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryBreadcrumbUrl</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryBreadcrumbContent" enabled="true">
@@ -3140,6 +2862,7 @@ import java.util.Date;
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryBreadcrumbContent</stringProp>
                     <stringProp name="TestPlan.comments">sanity check, that we picked the right breadcrumb (must match the header)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryHeaderContent" enabled="true">
@@ -3151,6 +2874,7 @@ import java.util.Date;
                     <intProp name="Assertion.test_type">1</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryHeaderContent</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetRepositoryNewCat" enabled="true">
@@ -3162,6 +2886,7 @@ import java.util.Date;
                     <intProp name="Assertion.test_type">1</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryNewCat</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -3189,7 +2914,7 @@ import java.util.Date;
                 </LoopController>
                 <hashTree>
                   <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="NewCategoryAction" enabled="true">
-                    <stringProp name="cacheKey"></stringProp>
+                    <stringProp name="cacheKey">true</stringProp>
                     <stringProp name="filename"></stringProp>
                     <stringProp name="parameters"></stringProp>
                     <stringProp name="script">NewCategoryAction = vars.get(&quot;ilPostNewCategoryNewCat&quot;);
@@ -3285,6 +3010,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">12</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetNewCategoryAction</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategoryTitle" enabled="true">
@@ -3297,6 +3023,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">12</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetNewCategoryTitle</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategoryDescription" enabled="true">
@@ -3309,6 +3036,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">12</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetNewCategoryDescription</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategorySubmit" enabled="true">
@@ -3321,6 +3049,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">12</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetNewCategorySubmit</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategorySubmitV" enabled="true">
@@ -3333,6 +3062,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">12</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetNewCategorySubmitV</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                   </hashTree>
@@ -3424,6 +3154,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">8</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">FatalError</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilPostNewCategoryHeaderImage" enabled="true">
@@ -3436,6 +3167,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilPostNewCategoryHeaderImage</stringProp>
                       <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilPostNewCategoryNewCat" enabled="true">
@@ -3447,6 +3179,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">1</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilPostNewCategoryNewCat</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="not error.php" enabled="true">
@@ -3456,6 +3189,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <stringProp name="Assertion.test_field">Assertion.sample_label</stringProp>
                       <boolProp name="Assertion.assume_success">false</boolProp>
                       <intProp name="Assertion.test_type">6</intProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetLastcreatedCategoryRefId" enabled="true">
@@ -3467,6 +3201,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                       <intProp name="Assertion.test_type">1</intProp>
                       <stringProp name="Assertion.scope">variable</stringProp>
                       <stringProp name="Scope.variable">ilGetLastcreatedCategoryRefId_g1</stringProp>
+                      <stringProp name="Assertion.custom_message"></stringProp>
                     </ResponseAssertion>
                     <hashTree/>
                     <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
@@ -3492,7 +3227,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   </hashTree>
                 </hashTree>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Forum Get Formaction" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Forum Get Formaction" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="ref_id" elementType="HTTPArgument">
@@ -3556,10 +3291,11 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
                   <intProp name="Assertion.test_type">20</intProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="baseClass" elementType="HTTPArgument">
@@ -3650,6 +3386,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewForumHeaderImage</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewForumRefId" enabled="true">
@@ -3661,10 +3398,11 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <intProp name="Assertion.test_type">1</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewForumRefId_g1</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post Action Url" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post Action Url" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="target" elementType="HTTPArgument">
@@ -3716,10 +3454,11 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <intProp name="Assertion.test_type">20</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewThreadActionUrl_g1</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post From Url Get Formaction" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET New Thread with Post From Url Get Formaction" enabled="true">
                 <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
                   <collectionProp name="Arguments.arguments"/>
                 </elementProp>
@@ -3756,6 +3495,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <intProp name="Assertion.test_type">20</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewThreadFormAction_g1</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="ilGetThreadFilehashValidate" enabled="true">
@@ -3777,10 +3517,11 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <intProp name="Assertion.test_type">12</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetThreadFilehashValidate</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum with Post" enabled="false">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST New Forum with Post" enabled="true">
                 <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                   <collectionProp name="HTTPFileArgs.files">
                     <elementProp name="README.md" elementType="HTTPFileArg">
@@ -3881,6 +3622,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewForumHeaderImage</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewThreadRefId" enabled="true">
@@ -3892,6 +3634,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <intProp name="Assertion.test_type">1</intProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetNewThreadRefId_g1</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetThreadCreationSuccessMessage" enabled="true">
@@ -3904,10 +3647,11 @@ vars.putObject(&quot;CategoryRefIds&quot;, RefIds);</stringProp>
                   <stringProp name="Assertion.scope">variable</stringProp>
                   <stringProp name="Scope.variable">ilGetThreadCreationSuccessMessage</stringProp>
                   <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                  <stringProp name="Assertion.custom_message"></stringProp>
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="false">
+              <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop for Course with Sessions creation" enabled="true">
                 <boolProp name="LoopController.continue_forever">true</boolProp>
                 <stringProp name="LoopController.loops">4</stringProp>
               </LoopController>
@@ -4017,6 +3761,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">20</intProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4120,6 +3865,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCourseHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCourseRefId" enabled="true">
@@ -4131,6 +3877,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">1</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCourseRefId_g1</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseMembershipUrl" enabled="true">
@@ -4140,6 +3887,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">12</intProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4226,6 +3974,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseSessionFormAction_g1</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderImageValidate" enabled="true">
@@ -4238,6 +3987,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4366,6 +4116,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">8</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseSessionSuccess</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4428,6 +4179,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCourseAddMemberGetId</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCourseAddMemberFormAction" enabled="true">
@@ -4439,6 +4191,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCourseAddMemberFormAction</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseMembersGalleryUrl" enabled="true">
@@ -4450,6 +4203,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseMembersGalleryUrl</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4501,6 +4255,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseHeaderImageBefore</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseMembersGalleryUrlContainsGalleryBefore" enabled="true">
@@ -4512,6 +4267,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseMembersGalleryUrlContainsGalleryBefore</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4597,6 +4353,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                         <intProp name="Assertion.test_type">8</intProp>
                         <stringProp name="Assertion.scope">variable</stringProp>
                         <stringProp name="Scope.variable">ilGetCourseSessionSuccess</stringProp>
+                        <stringProp name="Assertion.custom_message"></stringProp>
                       </ResponseAssertion>
                       <hashTree/>
                     </hashTree>
@@ -4660,6 +4417,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseHeaderImageAfter</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseHeaderContentAfter" enabled="true">
@@ -4671,6 +4429,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">8</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseHeaderContentAfter</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetCourseMembersGalleryUrlContainsGalleryAfter" enabled="true">
@@ -4682,17 +4441,18 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCourseMembersGalleryUrlContainsGalleryAfter</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
               </hashTree>
-              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="false">
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
                 <boolProp name="displayJMeterProperties">false</boolProp>
                 <boolProp name="displayJMeterVariables">true</boolProp>
                 <boolProp name="displaySystemProperties">false</boolProp>
               </DebugSampler>
               <hashTree/>
-              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete First Created Category" enabled="false"/>
+              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete First Created Category" enabled="true"/>
               <hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET DeleteCategoryAction" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -4748,6 +4508,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRepositoryHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="GetRemoveCategoryAction" enabled="true">
@@ -4770,6 +4531,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRemoveCategoryActionUrl</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4820,6 +4582,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCategoryHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <HtmlExtractor guiclass="HtmlExtractorGui" testclass="HtmlExtractor" testname="GetRemoveCategoryFormActionUrl" enabled="true">
@@ -4842,6 +4605,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetRemoveCategoryFormActionUrl</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -4898,6 +4662,7 @@ vars.put(&quot;ilCourseCreationSessions&quot;, Integer.toString(sessions));</str
                     <intProp name="Assertion.test_type">40</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetCategoryRemoveSuccess</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="CleanUp Variables PostProcessor" enabled="true">
@@ -4936,7 +4701,7 @@ vars.putObject(&quot;CategoryRefIds&quot;, null);</stringProp>
               </LoopController>
               <hashTree>
                 <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="NewCategoryAction" enabled="true">
-                  <stringProp name="cacheKey"></stringProp>
+                  <stringProp name="cacheKey">true</stringProp>
                   <stringProp name="filename"></stringProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="script">NewCategoryAction = vars.get(&quot;ilPostNewCategoryNewCat&quot;);
@@ -5028,6 +4793,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCategoryAction</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategoryTitle" enabled="true">
@@ -5040,6 +4806,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCategoryTitle</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategoryDescription" enabled="true">
@@ -5052,6 +4819,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCategoryDescription</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategorySubmit" enabled="true">
@@ -5064,6 +4832,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCategorySubmit</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilGetNewCategorySubmitV" enabled="true">
@@ -5076,6 +4845,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">12</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilGetNewCategorySubmitV</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -5158,6 +4928,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">8</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">FatalError</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilPostNewCategoryHeaderImage" enabled="true">
@@ -5170,6 +4941,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilPostNewCategoryHeaderImage</stringProp>
                     <stringProp name="TestPlan.comments">sanity check if we are on the right page (and not forced to change password, accept user agreement, etc.)</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="ilPostNewCategoryNewCat" enabled="true">
@@ -5181,6 +4953,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <intProp name="Assertion.test_type">1</intProp>
                     <stringProp name="Assertion.scope">variable</stringProp>
                     <stringProp name="Scope.variable">ilPostNewCategoryNewCat</stringProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="not error.php" enabled="true">
@@ -5190,6 +4963,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                     <stringProp name="Assertion.test_field">Assertion.sample_label</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">6</intProp>
+                    <stringProp name="Assertion.custom_message"></stringProp>
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
@@ -5252,6 +5026,7 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
                 <intProp name="Assertion.test_type">8</intProp>
                 <stringProp name="Assertion.scope">variable</stringProp>
                 <stringProp name="Scope.variable">ilGetLogoutHeader</stringProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
@@ -5324,82 +5099,191 @@ vars.put(&quot;NewCategoryAction&quot;, NewCategoryAction);</stringProp>
           <stringProp name="filename">${OUT_DIR}/results_.csv</stringProp>
         </ResultCollector>
         <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <sampleCount>true</sampleCount>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${OUT_DIR}/summary_report.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <sampleCount>true</sampleCount>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${OUT_DIR}/response_time_graph.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <sampleCount>true</sampleCount>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">${OUT_DIR}/graph_results.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
       </hashTree>
-    </hashTree>
-    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
-      <boolProp name="WorkBench.save">true</boolProp>
-    </WorkBench>
-    <hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="DEBUG: Inspect Results" enabled="true">
-        <boolProp name="ResultCollector.error_logging">true</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>false</time>
-            <latency>false</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>false</label>
-            <code>true</code>
-            <message>false</message>
-            <threadName>true</threadName>
-            <dataType>false</dataType>
-            <encoding>false</encoding>
-            <assertions>false</assertions>
-            <subresults>false</subresults>
-            <responseData>true</responseData>
-            <samplerData>false</samplerData>
-            <xml>true</xml>
-            <fieldNames>false</fieldNames>
-            <responseHeaders>true</responseHeaders>
-            <requestHeaders>true</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <url>true</url>
-            <sampleCount>true</sampleCount>
-          </value>
-        </objProp>
-        <stringProp name="TestPlan.comments">temporarily place this beneath any element you want to inspect</stringProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
+      <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="DEBUG: Display Properties" enabled="false"/>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="DEBUG: Inspect Results" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>false</time>
-            <latency>false</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>false</label>
-            <code>true</code>
-            <message>false</message>
-            <threadName>true</threadName>
-            <dataType>false</dataType>
-            <encoding>false</encoding>
-            <assertions>false</assertions>
-            <subresults>false</subresults>
-            <responseData>true</responseData>
-            <samplerData>false</samplerData>
-            <xml>true</xml>
-            <fieldNames>false</fieldNames>
-            <responseHeaders>true</responseHeaders>
-            <requestHeaders>true</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <url>true</url>
-            <sampleCount>true</sampleCount>
-          </value>
-        </objProp>
-        <stringProp name="TestPlan.comments">temporarily place this beneath any element you want to inspect</stringProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
-      <hashTree/>
-      <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="DEBUG: Display Properties" enabled="true"/>
-      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="WorkBench Test Fragment" enabled="false"/>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="DEBUG: Inspect Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>false</time>
+              <latency>false</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>false</label>
+              <code>true</code>
+              <message>false</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>false</assertions>
+              <subresults>false</subresults>
+              <responseData>true</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <url>true</url>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="TestPlan.comments">temporarily place this beneath any element you want to inspect</stringProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="DEBUG: Snapshot Variables" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="DEBUG: Inspect Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>false</time>
+              <latency>false</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>false</label>
+              <code>true</code>
+              <message>false</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>false</assertions>
+              <subresults>false</subresults>
+              <responseData>true</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <url>true</url>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="TestPlan.comments">temporarily place this beneath any element you want to inspect</stringProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
